@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bv853mipwq5up"]
+
+[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_5ccfs"]
+[ext_resource type="Script" uid="uid://fijgbj6nu65s" path="res://npc/manolo.gd" id="1_rpaom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewxmi"]
+radius = 61.999996
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ccfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5ccfs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="manolo" type="Area2D" unique_id=1407075651]
+script = ExtResource("1_rpaom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797881548]
+shape = SubResource("CircleShape2D_ewxmi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1907817881]
+sprite_frames = SubResource("SpriteFrames_5ccfs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
