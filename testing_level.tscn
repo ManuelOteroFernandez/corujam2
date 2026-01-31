@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="2_haa73"]
 [ext_resource type="PackedScene" uid="uid://gnwu87y3yf7q" path="res://interactors/interactorTest.tscn" id="3_b55i6"]
 [ext_resource type="PackedScene" uid="uid://33i8k6kuf66t" path="res://npc/npc_path.tscn" id="4_n3hra"]
+[ext_resource type="AudioStream" uid="uid://bm0l3k3ktdhrw" path="res://sonidos/music/Pad-3_Vol_200.mp3" id="5_th68x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_haa73")
@@ -74,3 +75,8 @@ position = Vector2(686, 95)
 position = Vector2(297, 64)
 curve = SubResource("Curve2D_n3hra")
 stop_points = Array[float]([300.0, 700.0, 1000.0, 500000.0])
+
+[node name="Pad3Vol200" type="AudioStreamPlayer" parent="." unique_id=482024936]
+stream = ExtResource("5_th68x")
+volume_db = 24.0
+autoplay = true
