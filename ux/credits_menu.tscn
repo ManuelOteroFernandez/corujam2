@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bcb7p5ay6qjrv"]
 
 [ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_ejno8"]
+[ext_resource type="FontFile" uid="uid://p7x1ooaaecr7" path="res://ux/Web437_Trident_8x16.woff" id="2_3g2t6"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="2_wr30l"]
 
 [node name="CreditsMenu" type="CanvasLayer" unique_id=1189331394]
@@ -25,10 +26,12 @@ alignment = 1
 
 [node name="BtnPlay" type="Button" parent="Container/VBoxContainer" unique_id=1201706811]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3g2t6")
 text = "Comenzar un gran día"
 
 [node name="BtnCredits" type="Button" parent="Container/VBoxContainer" unique_id=1620176451]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3g2t6")
 text = "Creditos"
 
 [node name="TransitionScreen" parent="." unique_id=1655704161 instance=ExtResource("2_wr30l")]
