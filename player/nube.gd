@@ -1,8 +1,28 @@
-extends CharacterBody2D
+class_name Nube extends CharacterBody2D
+
+signal change_power_signal(power:Powers)
+
+enum Powers {
+	TORMENTA = 0,
+	INUNDADO = 1,
+	MOJADO = 2,
+	SECO = 3
+}
+
+const POWER_SEQUENSE = {
+	Powers.TORMENTA: Powers.INUNDADO,
+	Powers.INUNDADO: Powers.MOJADO,
+	Powers.MOJADO: Powers.SECO,
+	Powers.SECO: Powers.TORMENTA,
+}
 
 
 const SPEED = 300.0
+var current_power = Powers.SECO
 
+func _input(event: InputEvent) -> void:
+	if event.is_action("interact"):
+		change_next_power()
 
 func _physics_process(_delta: float) -> void:
 
@@ -20,3 +40,7 @@ func _physics_process(_delta: float) -> void:
 
 
 	move_and_slide()
+
+func change_next_power():
+	current_power = POWER_SEQUENSE[current_power]
+	change_power_signal.emit(current_power)
