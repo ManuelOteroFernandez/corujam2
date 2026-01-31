@@ -1,0 +1,82 @@
+[gd_resource type="TileSet" format=3 uid="uid://d24kjl34oy88v"]
+
+[ext_resource type="Texture2D" uid="uid://cnfq5o0fm38jk" path="res://abstractTiles_sheet.png" id="1_gpy71"]
+[ext_resource type="Texture2D" uid="uid://dqg5sqpcryhxn" path="res://Assets/Tile-Calzada-Lineas.png" id="2_dss2v"]
+[ext_resource type="Texture2D" uid="uid://b2jvw1sqqmvx2" path="res://Assets/Tile-Calzada-Mojada.png" id="3_vsqtg"]
+[ext_resource type="Texture2D" uid="uid://dqsdus25s2sqn" path="res://Assets/Tile-Calzada-Seca.png" id="4_vlinp"]
+[ext_resource type="Texture2D" uid="uid://m1y0pi3mpywg" path="res://Assets/Tile-Calzada-Zebra-Extremo.png" id="5_l1etw"]
+[ext_resource type="Texture2D" uid="uid://cm8tpi0t62os4" path="res://Assets/Tile-Calzada-Zebra.png" id="6_j638u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
+texture = ExtResource("1_gpy71")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(111, 64)
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -32, 55.5, 0, 0, 32, -55.5, 0)
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k485e"]
+texture = ExtResource("2_dss2v")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6wuy"]
+texture = ExtResource("3_vsqtg")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bd5nb"]
+texture = ExtResource("4_vlinp")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fsgiw"]
+texture = ExtResource("5_l1etw")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wemwl"]
+texture = ExtResource("6_j638u")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+
+[resource]
+tile_shape = 1
+tile_size = Vector2i(128, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n3hra")
+sources/1 = SubResource("TileSetAtlasSource_k485e")
+sources/2 = SubResource("TileSetAtlasSource_r6wuy")
+sources/3 = SubResource("TileSetAtlasSource_bd5nb")
+sources/4 = SubResource("TileSetAtlasSource_fsgiw")
+sources/5 = SubResource("TileSetAtlasSource_wemwl")

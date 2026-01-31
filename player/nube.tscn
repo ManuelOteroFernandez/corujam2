@@ -2,17 +2,31 @@
 
 [ext_resource type="Script" uid="uid://d1dyraxr4ku3q" path="res://player/nube.gd" id="1_wkjyh"]
 [ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_x8dao"]
+[ext_resource type="Script" uid="uid://cscywnxygysap" path="res://player/progress_bar.gd" id="3_035ai"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkjyh"]
-radius = 42.0119
+radius = 20.0
 
 [node name="Nube" type="CharacterBody2D" unique_id=774090252]
 motion_mode = 1
 script = ExtResource("1_wkjyh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952391549]
-shape = SubResource("CircleShape2D_wkjyh")
-
 [node name="Icon" type="Sprite2D" parent="." unique_id=378098902]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_x8dao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952391549]
+shape = SubResource("CircleShape2D_wkjyh")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1699817396]
+offset_left = -39.0
+offset_top = -43.0
+offset_right = 39.0
+offset_bottom = -35.0
+max_value = 1.0
+show_percentage = false
+script = ExtResource("3_035ai")
+
+[node name="Timer" type="Timer" parent="." unique_id=1395854047]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,27 +1,30 @@
 class_name Nube extends CharacterBody2D
 
 signal change_power_signal(power:Powers)
+signal active_power_signal(power:Powers)
 
 enum Powers {
 	TORMENTA = 0,
 	INUNDADO = 1,
-	MOJADO = 2,
+	FRIO = 2,
 	SECO = 3
 }
 
 const POWER_SEQUENSE = {
 	Powers.TORMENTA: Powers.INUNDADO,
-	Powers.INUNDADO: Powers.MOJADO,
-	Powers.MOJADO: Powers.SECO,
+	Powers.INUNDADO: Powers.FRIO,
+	Powers.FRIO: Powers.SECO,
 	Powers.SECO: Powers.TORMENTA,
 }
 
-
 const SPEED = 300.0
+
+@onready var timer: Timer = $Timer
+
 var current_power = Powers.SECO
 
 func _input(event: InputEvent) -> void:
-	if event.is_action("interact"):
+	if event.is_action_pressed("interact"):
 		change_next_power()
 
 func _physics_process(_delta: float) -> void:
@@ -38,9 +41,32 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	if velocity == Vector2.ZERO:
+		if timer.is_stopped():
+			timer.start()
+	else:
+		timer.stop()
 
 	move_and_slide()
 
 func change_next_power():
+	timer.stop()
 	current_power = POWER_SEQUENSE[current_power]
 	change_power_signal.emit(current_power)
+	print("current {0}".format([current_power]))
+	
+func get_radius():
+	return $CollisionShape2D.shape.radius
+	
+func get_influents_points():
+	var rad = get_radius()
+	return [
+		global_position + Vector2.UP * rad,
+		global_position + Vector2.DOWN * rad,
+		global_position + Vector2.LEFT * rad,
+		global_position + Vector2.RIGHT * rad,
+	]
+
+
+func _on_timer_timeout() -> void:
+	active_power_signal.emit(current_power)

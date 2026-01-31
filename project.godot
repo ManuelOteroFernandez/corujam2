@@ -15,6 +15,10 @@ run/main_scene="uid://b0h4vpc8lq1ew"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+win="Si manolo lo toca gana"
+
 [input]
 
 move_up={
