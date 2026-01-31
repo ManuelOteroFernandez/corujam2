@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://coo1m7gunvm5h"]
+
+[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_cohs8"]
+[ext_resource type="Script" uid="uid://bq66g351x1obj" path="res://ux/main_menu.gd" id="2_aat5k"]
+[ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="3_wvbol"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1630719318]
+script = ExtResource("2_aat5k")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=684100275]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cohs8")
+
+[node name="Container" type="CenterContainer" parent="." unique_id=787875273]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=1124510929]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="BtnPlay" type="Button" parent="Container/VBoxContainer" unique_id=1255462181]
+layout_mode = 2
+text = "Comenzar un gran día"
+
+[node name="BtnCredits" type="Button" parent="Container/VBoxContainer" unique_id=1616872215]
+layout_mode = 2
+text = "Creditos"
+
+[node name="TransitionScreen" parent="." unique_id=437963877 instance=ExtResource("3_wvbol")]
+
+[connection signal="pressed" from="Container/VBoxContainer/BtnPlay" to="." method="_on_btn_play_pressed"]

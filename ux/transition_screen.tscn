@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2jfb54qnrue6"]
+
+[ext_resource type="Script" uid="uid://d0cbut8sbxx" path="res://ux/transition_screen.gd" id="1_aa4o3"]
+
+[node name="transition_screen" type="CanvasLayer" unique_id=1655704161]
+script = ExtResource("1_aa4o3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=437963877]
+modulate = Color(0.07058824, 0.07058824, 0.07058824, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+mouse_filter = 2
+color = Color(0.07058824, 0.07058824, 0.07058824, 0)
