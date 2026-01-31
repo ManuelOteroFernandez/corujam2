@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://b0h4vpc8lq1ew"]
 
 [ext_resource type="Texture2D" uid="uid://cnfq5o0fm38jk" path="res://abstractTiles_sheet.png" id="1_haa73"]
+[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="2_b55i6"]
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="2_haa73"]
 [ext_resource type="PackedScene" uid="uid://gnwu87y3yf7q" path="res://interactors/interactorTest.tscn" id="3_b55i6"]
-[ext_resource type="PackedScene" uid="uid://33i8k6kuf66t" path="res://npc/npc_path.tscn" id="4_n3hra"]
-[ext_resource type="AudioStream" uid="uid://bm0l3k3ktdhrw" path="res://sonidos/music/Pad-3_Vol_200.mp3" id="5_th68x"]
+[ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="5_th68x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_haa73")
@@ -50,11 +50,8 @@ tile_size = Vector2i(111, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n3hra")
 
-[sub_resource type="Curve2D" id="Curve2D_n3hra"]
-_data = {
-"points": PackedVector2Array(-30.87938, 1.5289631, 30.87938, -1.5289631, 91, 25, 0, 0, 0, 0, 332, -151, 0, 0, 0, 0, 562, -174, 0, 0, 0, 0, 517, 52, 0, 0, 0, 0, 449, 229, 0, 0, 0, 0, 196, 268, 0, 0, 0, 0, -97, 214, 0, 0, 0, 0, -219, -9, 0, 0, 0, 0, -93, -244, 0, 0, 0, 0, 133, -318, 0, 0, 0, 0, 116, -127, 0, 0, 0, 0, 626, -47, 0, 0, 0, 0, 720, -215, 0, 0, 0, 0, 91, 25)
-}
-point_count = 14
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hra"]
+size = Vector2(126, 73)
 
 [node name="Node2D" type="Node2D" unique_id=1091215993]
 
@@ -66,17 +63,22 @@ tile_set = SubResource("TileSet_th68x")
 [node name="InteractorTest" parent="." unique_id=983774299 instance=ExtResource("3_b55i6")]
 position = Vector2(778, 190)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1542549139]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(1165, 31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=86990141]
+position = Vector2(0, -26.5)
+shape = SubResource("RectangleShape2D_n3hra")
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=1050051514]
+texture = ExtResource("2_b55i6")
+
 [node name="Nube" parent="." unique_id=774090252 instance=ExtResource("2_haa73")]
-position = Vector2(686, 95)
+position = Vector2(668, 94)
 
 [node name="Camera2D" type="Camera2D" parent="Nube" unique_id=112134721]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
-[node name="NPC_path" parent="." unique_id=819550756 instance=ExtResource("4_n3hra")]
-position = Vector2(297, 64)
-curve = SubResource("Curve2D_n3hra")
-stop_points = Array[float]([300.0, 700.0, 1000.0, 500000.0])
-
-[node name="Pad3Vol200" type="AudioStreamPlayer" parent="." unique_id=482024936]
-stream = ExtResource("5_th68x")
-volume_db = 24.0
-autoplay = true
+[node name="ColorRect" parent="." unique_id=437963877 instance=ExtResource("5_th68x")]
