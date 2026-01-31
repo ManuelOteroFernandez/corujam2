@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="3_80uw1"]
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="4_vasrc"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="5_js3na"]
+[ext_resource type="AudioStream" uid="uid://bdsjvar0uck5t" path="res://sonidos/music/Pad-3-Vol-900.mp3" id="6_myxi8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_fsqc3")
@@ -82,3 +83,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="ColorRect" parent="." unique_id=437963877 instance=ExtResource("5_js3na")]
+
+[node name="Pad3Vol900" type="AudioStreamPlayer" parent="." unique_id=1335513590]
+stream = ExtResource("6_myxi8")
+autoplay = true
