@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var text_list:Array[String]
+@export var game_names: Array[String]
 @onready var text: RichTextLabel = $Container/VBoxContainer/RichTextLabel
 @onready var timer: Timer = $Timer
 @onready var button: Button = $Container/VBoxContainer/Button
@@ -17,7 +18,10 @@ func next_text():
 	
 	await tw.finished
 	
-	text.text = text_list[next_index]
+	if next_index == 7:
+		text.text = "+ {0}. ¡Ha salido hoy!".format([game_names.pick_random()])
+	else:
+		text.text = text_list[next_index]
 	if next_index < text_list.size():
 		next_index += 1
 		

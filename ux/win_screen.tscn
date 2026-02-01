@@ -6,7 +6,8 @@
 
 [node name="WinScreen" type="CanvasLayer" unique_id=1930916143]
 script = ExtResource("1_82l3k")
-text_list = Array[String](["gaste", "ed e"])
+text_list = Array[String](["- He llegado", "- Por favor, dímelo sin tapujos. Sea lo que sea, ya me he mentalizado.", "+ ¿Por qué esa cara tan larga?¿Qué piensas que ha pasado?", "- No se, me esperaba que se hubiese muerto el gato o algo así.", "+ No tranquilo, no ha pasado nada malo. ", "+ ¿Sabes ese juego que tanto estabas esperando?", "- ¿Cuál de ellos?", "+ El *Inserte nombre de juego de esta Jam*. ¡Ha salido hoy!", "- ¡Que alegría! En verdad nunca llueve que no escampe."])
+game_names = Array[String](["Si estas preocupado no te preocupes", "E se nunca chove", "Escampador", "Batatinha", "Las asombrosas aventuras del valeroso Milo Cirrus"])
 
 [node name="Container" type="Control" parent="." unique_id=325274922]
 layout_mode = 3
