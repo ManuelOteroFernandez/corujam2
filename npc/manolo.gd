@@ -32,7 +32,7 @@ func _on_timer_timeout() -> void:
 		return
 		
 	if damage_area.has_method("is_manolo_alive") and \
-	damage_area.is_manolo_alive(global_position):
+	not damage_area.is_manolo_alive(global_position):
 		manolo_die(damage_area)
 		
 func manolo_die(area:Area2D):
