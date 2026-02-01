@@ -68,17 +68,18 @@ text = "
 																											[b][u]Créditos[/u][/b]
 
 							[b]Manuel Otero:[/b] Programación.
-							[b]Alex Rey:[/b] Producción, Diseño de juego y niveles, Guión.
-							[b]Eric “MessEd”:[/b] Arte Principal, Animación, Assets gráficos 2D, Interfaz de usuario.
-							[b]Rafa “Zorzamoth” Pérez:[/b] Control de calidad, Créditos, apoyo a otras tareas.
+							[b]Alex Rey:[/b] Producción, Diseño de juego y niveles, Guión, apoyo a Arte.
+							[b]Eric “MessEd”:[/b] Artista Principal, Animación, Assets gráficos 2D, Interfaz de usuario.
+							[b]Rafa “Zorzamoth” Pérez:[/b] Control de calidad, Créditos, Arte menú inicial, apoyo a otras tareas.
 
-							
+			
 
 
 							- [b]Música:[/b] Pad 3, obtenida del Sonniss Royalty Free Sound Effects Archive.
 							- [b]Efectos de sonido:[/b] varios archivos obtenidos del Sonniss Royalty Free Sound Effects Archive y
 							de los Kenney Game Assets Packs
 							- [b]Tipografía:[/b] Web437_Trident_8x16.woff, obtenida de The Ultimate Oldschool PC Font Pack
+							- Se han usado varias imágenes sin licencia en las pantallas de incio y de créditos.
 "
 fit_content = true
 script = SubResource("GDScript_3g2t6")
@@ -134,10 +135,10 @@ uri = "https://zorzamothtb.wixsite.com/rafael-perez-qa"
 
 [node name="LinkSonniss" type="LinkButton" parent="ControldeLinks" unique_id=1077998214]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 496.0
-offset_right = 442.0
-offset_bottom = 536.0
+offset_left = 102.0
+offset_top = 515.0
+offset_right = 438.0
+offset_bottom = 555.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sonniss Royalty Free Sound Effects Archive"
 uri = "https://sonniss.com/gameaudiogdc/"
@@ -145,19 +146,19 @@ uri = "https://sonniss.com/gameaudiogdc/"
 [node name="LinkKenney" type="LinkButton" parent="ControldeLinks" unique_id=1471680541]
 layout_mode = 0
 offset_left = 476.0
-offset_top = 497.0
+offset_top = 516.0
 offset_right = 685.0
-offset_bottom = 537.0
+offset_bottom = 556.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Kenney Game Assets Packs"
 uri = "https://kenney.itch.io/"
 
 [node name="LinkOSPCFP" type="LinkButton" parent="ControldeLinks" unique_id=1152491405]
 layout_mode = 0
-offset_left = 743.0
-offset_top = 498.0
-offset_right = 1028.0
-offset_bottom = 538.0
+offset_left = 745.0
+offset_top = 517.0
+offset_right = 1030.0
+offset_bottom = 557.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "The Ultimate Oldschool PC Font Pack"
 uri = "https://int10h.org/oldschool-pc-fonts/fontlist/"

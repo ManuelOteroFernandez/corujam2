@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://coo1m7gunvm5h"]
 
-[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_cohs8"]
 [ext_resource type="Script" uid="uid://bq66g351x1obj" path="res://ux/main_menu.gd" id="2_aat5k"]
+[ext_resource type="Texture2D" uid="uid://c3rauixhsl40m" path="res://Assets/UI/Fondo_Menu_inicial.jpg" id="2_at13o"]
 [ext_resource type="FontFile" uid="uid://p7x1ooaaecr7" path="res://ux/Web437_Trident_8x16.woff" id="3_at13o"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="3_wvbol"]
 
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_cohs8")
+texture = ExtResource("2_at13o")
 
 [node name="Container" type="CenterContainer" parent="." unique_id=787875273]
 offset_right = 1152.0
