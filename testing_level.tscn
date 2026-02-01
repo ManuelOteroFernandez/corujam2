@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://33i8k6kuf66t" path="res://npc/npc_path.tscn" id="7_50fuq"]
 [ext_resource type="PackedScene" uid="uid://dmxf13rdkyev2" path="res://interactors/piscina.tscn" id="7_nha3r"]
 [ext_resource type="PackedScene" uid="uid://c2dygt54i7mod" path="res://checkpoint.tscn" id="8_pdwrp"]
-[ext_resource type="PackedScene" uid="uid://ca2lkwil1y3ql" path="res://interactors/electricidad.tscn" id="10_7w4r7"]
 [ext_resource type="PackedScene" uid="uid://dvj63ppnphvwh" path="res://ux/death_screen.tscn" id="11_oob0o"]
+[ext_resource type="PackedScene" uid="uid://b7wrhg522blx" path="res://win_area.tscn" id="12_m1pso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hra"]
 size = Vector2(126, 73)
@@ -48,8 +48,6 @@ shape = SubResource("RectangleShape2D_n3hra")
 [node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=1050051514]
 texture = ExtResource("2_b55i6")
 
-[node name="ColorRect" parent="." unique_id=437963877 instance=ExtResource("5_th68x")]
-
 [node name="Nube" parent="." unique_id=774090252 instance=ExtResource("2_haa73")]
 position = Vector2(668, 94)
 
@@ -64,7 +62,7 @@ position = Vector2(-253, -207)
 position = Vector2(232, 17)
 
 [node name="Checkpoint2" parent="." unique_id=1992549966 instance=ExtResource("8_pdwrp")]
-position = Vector2(621, 236)
+position = Vector2(818, 104)
 
 [node name="NPC_path" parent="." unique_id=881674550 instance=ExtResource("7_50fuq")]
 position = Vector2(552, 103)
@@ -72,15 +70,9 @@ curve = SubResource("Curve2D_nha3r")
 stop_points = Array[float]([9999.0])
 metadata/_edit_lock_ = true
 
-[node name="Electricidad" parent="." unique_id=1527725779 instance=ExtResource("10_7w4r7")]
-position = Vector2(378, 155)
-
-[node name="TileMapLayer" parent="Electricidad" index="0" unique_id=1022504317]
-tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAA=")
-
-[node name="CollisionPolygon2D" parent="Electricidad" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(5, 30, -55, -2, 66, -65, 130, -34)
-
 [node name="DeathScreen" parent="." unique_id=1930916143 instance=ExtResource("11_oob0o")]
 
-[editable path="Electricidad"]
+[node name="transition_screen" parent="." unique_id=1655704161 instance=ExtResource("5_th68x")]
+
+[node name="WinArea" parent="." unique_id=567062255 instance=ExtResource("12_m1pso")]
+position = Vector2(508, 179)

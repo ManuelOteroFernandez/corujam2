@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var npc_path: NpcPath = $NPC_path
 @onready var death_screen: DeathScreen = $DeathScreen
+@onready var transition_screen: CanvasLayer = $transition_screen
 
 var checkpoint_progress = 0
 
@@ -24,7 +25,10 @@ func continue_game():
 	npc_path.run()
 
 func on_manolo_win():
-	pass
+	transition_screen.fade_out()
+	await transition_screen.end_transition_signal
+	
+	get_tree().change_scene_to_file("res://ux/win_screen.tscn")
 
 
 func on_manolo_dead(text:String):
