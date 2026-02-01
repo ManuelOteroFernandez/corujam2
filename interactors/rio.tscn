@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://buwu0rjwgwaxc" path="res://interactors/rio.gd" id="1_0ohbl"]
 [ext_resource type="TileSet" uid="uid://d24kjl34oy88v" path="res://tile_set.tres" id="2_wpreb"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ddi6q"]
-points = PackedVector2Array(-63, 128, -193, 63, 129, -95, 254, -33)
-
 [node name="Rio" type="Area2D" unique_id=373283957 groups=["damage"]]
 script = ExtResource("1_0ohbl")
 
@@ -13,5 +10,5 @@ script = ExtResource("1_0ohbl")
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAAAAP3/AgAAAAAAAAABAP7/AgAAAAAAAAD+/wEAAgAAAAAAAAD//wIAAgAAAAAAAAA=")
 tile_set = ExtResource("2_wpreb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=254158593]
-shape = SubResource("ConvexPolygonShape2D_ddi6q")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2071466395]
+polygon = PackedVector2Array(-188, 62, 123, -96, 251, -32, -61, 123)

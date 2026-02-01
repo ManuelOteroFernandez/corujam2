@@ -1,16 +1,16 @@
-[gd_scene format=4 uid="uid://clx7q84snlk4b"]
+[gd_scene format=4 uid="uid://b3meitm8dro5k"]
 
 [ext_resource type="Texture2D" uid="uid://cnfq5o0fm38jk" path="res://abstractTiles_sheet.png" id="1_a1npu"]
 [ext_resource type="PackedScene" uid="uid://33i8k6kuf66t" path="res://npc/npc_path.tscn" id="2_243n1"]
 [ext_resource type="Texture2D" uid="uid://bmulur4aojhuv" path="res://Assets/abstractTiles_sheet_estirada.png" id="2_mxclt"]
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="3_7k2f8"]
 [ext_resource type="Texture2D" uid="uid://dqsdus25s2sqn" path="res://Assets/Tile-Calzada-Seca.png" id="3_rllm6"]
-[ext_resource type="PackedScene" path="res://interactors/rio.tscn" id="5_0x2ix"]
-[ext_resource type="PackedScene" path="res://interactors/carretera.tscn" id="7_7oy02"]
-[ext_resource type="PackedScene" path="res://interactors/electricidad.tscn" id="8_byc5v"]
-[ext_resource type="PackedScene" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
-[ext_resource type="PackedScene" path="res://interactors/piscina.tscn" id="10_mhfri"]
-[ext_resource type="PackedScene" path="res://checkpoint.tscn" id="11_cppos"]
+[ext_resource type="PackedScene" uid="uid://d1q3g8kxlrua1" path="res://interactors/rio.tscn" id="5_0x2ix"]
+[ext_resource type="PackedScene" uid="uid://46jq7t0kmgjd" path="res://interactors/carretera.tscn" id="7_7oy02"]
+[ext_resource type="PackedScene" uid="uid://ca2lkwil1y3ql" path="res://interactors/electricidad.tscn" id="8_byc5v"]
+[ext_resource type="PackedScene" uid="uid://shl2ko3hyreg" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
+[ext_resource type="PackedScene" uid="uid://dmxf13rdkyev2" path="res://interactors/piscina.tscn" id="10_mhfri"]
+[ext_resource type="PackedScene" uid="uid://c2dygt54i7mod" path="res://checkpoint.tscn" id="11_cppos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_a1npu")
@@ -186,6 +186,9 @@ metadata/_edit_group_ = true
 [node name="TileMapLayer" parent="Rio2" index="0" unique_id=2012921921]
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAD+//3/AgAAAAAAAAD///7/AgAAAAAAAAAAAAEAAgAAAAAAAAABAAAAAgAAAAAAAAD///3/AgAAAAAAAAD///z/AgAAAAAAAAA=")
 
+[node name="CollisionPolygon2D" parent="Rio2" index="1" unique_id=2071466395]
+polygon = PackedVector2Array(-68, -134, 252, 32, 133, 94, -195, -70)
+
 [node name="Piscina" parent="." unique_id=1321827573 instance=ExtResource("10_mhfri")]
 position = Vector2(952, -864)
 
@@ -199,7 +202,7 @@ polygon = PackedVector2Array(648, 96, -120, -296, -439, -129, 321, 261)
 position = Vector2(-1096, -2016)
 
 [node name="TileMapLayer" parent="Piscina2" index="0" unique_id=1951921531]
-tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAAAAPz/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD+////AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAD+//7/AAABAAAAAAD+//3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD9//3/AAABAAAAAAD9//z/AAABAAAAAAD9//v/AAABAAAAAAD+//r/AAABAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAD9//n/AAABAAAAAAD9//r/AAABAAAAAAD8//v/AAABAAAAAAAAAP3/AAABAAAAAAABAP7/AAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAAAAPz/AAABAAAAAAAAAP3/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD+////AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAD+//7/AAABAAAAAAD+//3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD9//3/AAABAAAAAAD9//z/AAABAAAAAAD9//v/AAABAAAAAAD+//r/AAABAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAD9//n/AAABAAAAAAD9//r/AAABAAAAAAD8//v/AAABAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Piscina2" index="1" unique_id=333126962]
 polygon = PackedVector2Array(328, 0, -184, -256, -439, -129, 64, 128)
@@ -373,14 +376,14 @@ position = Vector2(-5376, -2880)
 metadata/_edit_group_ = true
 
 [node name="TileMapLayer" parent="Rio5" index="0" unique_id=2012921921]
-tile_map_data = PackedByteArray("AAD+/wEAAgAAAAAAAAD+////AgAAAAAAAAD///7/AgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAD/////AgAAAAAAAAD//wIAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD//wIAAgAAAAAAAAD+////AgAAAAAAAAD///7/AgAAAAAAAAA=")
 
 [node name="Rio6" parent="." unique_id=1836589692 instance=ExtResource("5_0x2ix")]
 position = Vector2(-5824, -2720)
 metadata/_edit_group_ = true
 
 [node name="TileMapLayer" parent="Rio6" index="0" unique_id=2012921921]
-tile_map_data = PackedByteArray("AAAAAP7/AgAAAAAAAAD/////AgAAAAAAAAAAAAAAAgAAAAAAAAD///7/AgAAAAAAAAD+////AgAAAAAAAAD//wAAAgAAAAAAAAD+/wAAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAAAAAgAAAAAAAAD//wAAAgAAAAAAAAD///7/AgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAA=")
 
 [node name="Checkpoint" parent="." unique_id=374578280 instance=ExtResource("11_cppos")]
 position = Vector2(960, 352)
