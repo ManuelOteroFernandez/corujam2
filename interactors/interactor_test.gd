@@ -1,7 +1,8 @@
 extends "res://interactors/interactor_base.gd".InteractorBase
 
 func on_nube_interact(power:Nube.Powers):
-	print("poder activo {0}".format([power]))
+	#print("poder activo {0}".format([power]))
+	pass
 
 func on_active_nube_interact(_power:Nube.Powers):
 	pass

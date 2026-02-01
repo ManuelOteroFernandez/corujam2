@@ -8,7 +8,6 @@ class InteractorBase extends Area2D:
 		body_exited.connect(_on_body_exited)
 
 	func _on_body_entered(body: Node2D) -> void:
-		print("dentro")
 		if not body is Nube:
 			return
 
@@ -20,7 +19,6 @@ class InteractorBase extends Area2D:
 
 
 	func _on_body_exited(body: Node2D) -> void:
-		print("fuera")
 		if not body is Nube:
 			return
 		
