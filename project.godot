@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [global_group]
 
 win="Si manolo lo toca gana"
+damage=""
+instand_damage="Muere instantaneamente"
 
 [input]
 
