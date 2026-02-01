@@ -79,7 +79,7 @@ text = "
 							- [b]Efectos de sonido:[/b] varios archivos obtenidos del Sonniss Royalty Free Sound Effects Archive y
 							de los Kenney Game Assets Packs
 							- [b]Tipografía:[/b] Web437_Trident_8x16.woff, obtenida de The Ultimate Oldschool PC Font Pack
-							- Se han usado varias imágenes sin licencia en las pantallas de incio y de créditos.
+							- Se han usado varias imágenes sin licencia en las pantallas de inicio y de créditos.
 "
 fit_content = true
 script = SubResource("GDScript_3g2t6")
