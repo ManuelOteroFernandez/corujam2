@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="corujam2"
-run/main_scene="uid://b0h4vpc8lq1ew"
+run/main_scene="uid://coo1m7gunvm5h"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
