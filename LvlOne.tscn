@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dvj63ppnphvwh" path="res://ux/death_screen.tscn" id="14_cppos"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="15_einqo"]
 [ext_resource type="PackedScene" uid="uid://b7wrhg522blx" path="res://win_area.tscn" id="16_xos8u"]
+[ext_resource type="AudioStream" uid="uid://bdsjvar0uck5t" path="res://sonidos/music/Pad-3-Vol-900.mp3" id="18_einqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_a1npu")
@@ -466,6 +467,10 @@ npc_path = NodePath("../NPC_path")
 
 [node name="WinArea" parent="." unique_id=567062255 instance=ExtResource("16_xos8u")]
 position = Vector2(-7004, -2321)
+
+[node name="Pad3Vol900" type="AudioStreamPlayer" parent="." unique_id=2080511664]
+stream = ExtResource("18_einqo")
+autoplay = true
 
 [editable path="Rio"]
 [editable path="Carretera"]
