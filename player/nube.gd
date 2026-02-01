@@ -24,8 +24,14 @@ const SPEED = 300.0
 var current_power = Powers.SECO
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact"):
-		change_next_power()
+	if event.is_action_pressed("power_01"):
+		change_power(Powers.TORMENTA)
+	elif event.is_action_pressed("power_02"):
+		change_power(Powers.INUNDADO)
+	elif event.is_action_pressed("power_03"):
+		change_power(Powers.FRIO)
+	elif event.is_action_pressed("power_04"):
+		change_power(Powers.SECO)
 
 func _physics_process(_delta: float) -> void:
 
@@ -49,11 +55,10 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-func change_next_power():
+func change_power(power:Powers):
 	timer.stop()
-	current_power = POWER_SEQUENSE[current_power]
+	current_power = power
 	change_power_signal.emit(current_power)
-	print("current {0}".format([current_power]))
 	
 func get_radius():
 	return $CollisionShape2D.shape.radius
