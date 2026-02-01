@@ -1,5 +1,7 @@
 extends Path2D
 
+signal manolo_stop_signal
+
 @export var stop_points: Array[float] = []
 @export var speed = 100
 
@@ -12,6 +14,7 @@ func run():
 	is_running = true
 	
 func stop():
+	manolo_stop_signal.emit(stop_points[current_goal])
 	is_running = false
 	if current_goal < stop_points.size() - 1:
 		current_goal += 1 
