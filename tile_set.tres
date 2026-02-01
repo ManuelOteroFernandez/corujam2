@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqsdus25s2sqn" path="res://Assets/Tile-Calzada-Seca.png" id="4_vlinp"]
 [ext_resource type="Texture2D" uid="uid://m1y0pi3mpywg" path="res://Assets/Tile-Calzada-Zebra-Extremo.png" id="5_l1etw"]
 [ext_resource type="Texture2D" uid="uid://cm8tpi0t62os4" path="res://Assets/Tile-Calzada-Zebra.png" id="6_j638u"]
+[ext_resource type="Texture2D" uid="uid://dx4s5mnqg1188" path="res://Assets/TilemapFinal.png" id="7_qumku"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_gpy71")
@@ -73,6 +74,38 @@ texture = ExtResource("6_j638u")
 texture_region_size = Vector2i(128, 64)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pofp"]
+texture = ExtResource("7_qumku")
+texture_region_size = Vector2i(128, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+3:9/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dcmha"]
+texture = ExtResource("7_qumku")
+texture_region_size = Vector2i(128, 64)
+
 [resource]
 tile_shape = 1
 tile_size = Vector2i(128, 64)
@@ -83,3 +116,5 @@ sources/2 = SubResource("TileSetAtlasSource_r6wuy")
 sources/3 = SubResource("TileSetAtlasSource_bd5nb")
 sources/4 = SubResource("TileSetAtlasSource_fsgiw")
 sources/5 = SubResource("TileSetAtlasSource_wemwl")
+sources/6 = SubResource("TileSetAtlasSource_5pofp")
+sources/7 = SubResource("TileSetAtlasSource_dcmha")
