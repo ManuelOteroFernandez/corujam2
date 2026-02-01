@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b3meitm8dro5k"]
+[gd_scene format=4 uid="uid://clx7q84snlk4b"]
 
 [ext_resource type="Texture2D" uid="uid://cnfq5o0fm38jk" path="res://abstractTiles_sheet.png" id="1_a1npu"]
 [ext_resource type="Script" uid="uid://wlrtprfowy3" path="res://level.gd" id="1_rllm6"]
@@ -7,15 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="3_7k2f8"]
 [ext_resource type="Texture2D" uid="uid://dqsdus25s2sqn" path="res://Assets/Tile-Calzada-Seca.png" id="3_rllm6"]
 [ext_resource type="PackedScene" uid="uid://d1q3g8kxlrua1" path="res://interactors/rio.tscn" id="5_0x2ix"]
-[ext_resource type="PackedScene" uid="uid://46jq7t0kmgjd" path="res://interactors/carretera.tscn" id="7_7oy02"]
-[ext_resource type="PackedScene" uid="uid://ca2lkwil1y3ql" path="res://interactors/electricidad.tscn" id="8_byc5v"]
-[ext_resource type="PackedScene" uid="uid://shl2ko3hyreg" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
-[ext_resource type="PackedScene" uid="uid://dmxf13rdkyev2" path="res://interactors/piscina.tscn" id="10_mhfri"]
-[ext_resource type="PackedScene" uid="uid://c2dygt54i7mod" path="res://checkpoint.tscn" id="11_cppos"]
+[ext_resource type="PackedScene" path="res://interactors/carretera.tscn" id="7_7oy02"]
+[ext_resource type="PackedScene" path="res://interactors/electricidad.tscn" id="8_byc5v"]
+[ext_resource type="PackedScene" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
+[ext_resource type="PackedScene" path="res://interactors/piscina.tscn" id="10_mhfri"]
+[ext_resource type="PackedScene" path="res://checkpoint.tscn" id="11_cppos"]
 [ext_resource type="PackedScene" uid="uid://ukefjid0axkw" path="res://ux/message_manager.tscn" id="13_mhfri"]
-[ext_resource type="PackedScene" uid="uid://dvj63ppnphvwh" path="res://ux/death_screen.tscn" id="14_cppos"]
+[ext_resource type="PackedScene" path="res://ux/death_screen.tscn" id="14_cppos"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="15_einqo"]
-[ext_resource type="PackedScene" uid="uid://b7wrhg522blx" path="res://win_area.tscn" id="16_xos8u"]
+[ext_resource type="PackedScene" path="res://win_area.tscn" id="16_xos8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_a1npu")
@@ -144,7 +144,7 @@ sources/2 = SubResource("TileSetAtlasSource_xos8u")
 
 [sub_resource type="Curve2D" id="Curve2D_a1npu"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 466, 15, 0, 0, 0, 0, -378, -424, 0, 0, 0, 0, -372, -522, 0, 0, 0, 0, 199, -810, 0, 0, 0, 0, 793, -1122, 0, 0, 0, 0, 373, -1344, 0, 0, 0, 0, 53, -1171, 0, 0, 0, 0, -2056, -2239, 0, 0, 0, 0, -1995, -2400, 0, 0, 0, 0, -1231, -2646, 0, 0, 0, 0, -1619, -2849, 0, 0, 0, 0, -1818, -2882, 0, 0, 0, 0, -1789, -2995, 0, 0, 0, 0, -1943, -3081, 0, 0, 0, 0, -2116, -3034, 0, 0, 0, 0, -2188, -3071, 0, 0, 0, 0, -2252, -3168, 0, 0, 0, 0, -2361, -3233, 0, 0, 0, 0, -2506, -3297, 0, 0, 0, 0, -2701, -3340, 0, 0, 0, 0, -2817, -3396, 0, 0, 0, 0, -3014, -3496, 0, 0, 0, 0, -2958, -3585, 0, 0, 0, 0, -3265, -3741, 0, 0, 0, 0, -3383, -3677, 0, 0, 0, 0, -3281, -3753, 0, 0, 0, 0, -3403, -3809, 0, 0, 0, 0, -3659, -3869, 0, 0, 0, 0, -3994, -4183, 0, 0, 0, 0, -4609, -3874, 0, 0, 0, 0, -5378, -3456, 0, 0, 0, 0, -5511, -3322, 0, 0, 0, 0, -5735, -3195, 0, 0, 0, 0, -6149, -3198, 0, 0, 0, 0, -6228, -3173, 0, 0, 0, 0, -6384, -2957, 0, 0, 0, 0, -6714, -2825, 0, 0, 0, 0, -7244, -2558, 0, 0, 0, 0, -7462, -2669)
+"points": PackedVector2Array(0, 0, 0, 0, 466, 15, 0, 0, 0, 0, -378, -424, 0, 0, 0, 0, -372, -522, 0, 0, 0, 0, 199, -810, 0, 0, 0, 0, 793, -1122, 0, 0, 0, 0, 373, -1344, 0, 0, 0, 0, 53, -1171, 0, 0, 0, 0, -1931, -2172, 0, 0, 0, 0, -1931, -2300, 0, 0, 0, 0, -1231, -2646, 0, 0, 0, 0, -1619, -2849, 0, 0, 0, 0, -1818, -2882, 0, 0, 0, 0, -1789, -2995, 0, 0, 0, 0, -1943, -3081, 0, 0, 0, 0, -2116, -3034, 0, 0, 0, 0, -2188, -3071, 0, 0, 0, 0, -2252, -3168, 0, 0, 0, 0, -2361, -3233, 0, 0, 0, 0, -2506, -3297, 0, 0, 0, 0, -2701, -3340, 0, 0, 0, 0, -2817, -3396, 0, 0, 0, 0, -3014, -3496, 0, 0, 0, 0, -2958, -3585, 0, 0, 0, 0, -3265, -3741, 0, 0, 0, 0, -3383, -3677, 0, 0, 0, 0, -3281, -3753, 0, 0, 0, 0, -3403, -3809, 0, 0, 0, 0, -3659, -3869, 0, 0, 0, 0, -3994, -4183, 0, 0, 0, 0, -4609, -3874, 0, 0, 0, 0, -5378, -3456, 0, 0, 0, 0, -5511, -3322, 0, 0, 0, 0, -5735, -3195, 0, 0, 0, 0, -6149, -3198, 0, 0, 0, 0, -6228, -3173, 0, 0, 0, 0, -6384, -2957, 0, 0, 0, 0, -6714, -2825, 0, 0, 0, 0, -7244, -2558, 0, 0, 0, 0, -7462, -2669)
 }
 point_count = 39
 
