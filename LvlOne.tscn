@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b3meitm8dro5k"]
+[gd_scene format=4 uid="uid://clx7q84snlk4b"]
 
 [ext_resource type="Texture2D" uid="uid://cnfq5o0fm38jk" path="res://abstractTiles_sheet.png" id="1_a1npu"]
 [ext_resource type="PackedScene" uid="uid://33i8k6kuf66t" path="res://npc/npc_path.tscn" id="2_243n1"]
@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="3_7k2f8"]
 [ext_resource type="Texture2D" uid="uid://dqsdus25s2sqn" path="res://Assets/Tile-Calzada-Seca.png" id="3_rllm6"]
 [ext_resource type="PackedScene" uid="uid://d1q3g8kxlrua1" path="res://interactors/rio.tscn" id="5_0x2ix"]
-[ext_resource type="PackedScene" uid="uid://46jq7t0kmgjd" path="res://interactors/carretera.tscn" id="7_7oy02"]
-[ext_resource type="PackedScene" uid="uid://ca2lkwil1y3ql" path="res://interactors/electricidad.tscn" id="8_byc5v"]
-[ext_resource type="PackedScene" uid="uid://shl2ko3hyreg" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
-[ext_resource type="PackedScene" uid="uid://dmxf13rdkyev2" path="res://interactors/piscina.tscn" id="10_mhfri"]
-[ext_resource type="PackedScene" uid="uid://c2dygt54i7mod" path="res://checkpoint.tscn" id="11_cppos"]
+[ext_resource type="PackedScene" path="res://interactors/carretera.tscn" id="7_7oy02"]
+[ext_resource type="PackedScene" path="res://interactors/electricidad.tscn" id="8_byc5v"]
+[ext_resource type="PackedScene" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
+[ext_resource type="PackedScene" path="res://interactors/piscina.tscn" id="10_mhfri"]
+[ext_resource type="PackedScene" path="res://checkpoint.tscn" id="11_cppos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_a1npu")
@@ -164,8 +164,14 @@ speed = 50
 position = Vector2(320, 32)
 metadata/_edit_group_ = true
 
+[node name="CollisionPolygon2D" parent="Rio" index="1" unique_id=2071466395]
+polygon = PackedVector2Array(-192, 64, 128, -96, 256, -32, -64, 128)
+
 [node name="Carretera" parent="." unique_id=1180991772 instance=ExtResource("7_7oy02")]
 position = Vector2(-704, -1376)
+
+[node name="CollisionPolygon2D" parent="Carretera" index="0" unique_id=1269882635]
+polygon = PackedVector2Array(-192, 192, -448, 64, 192, -256, 448, -128)
 
 [node name="Path2D" parent="Carretera" index="1" unique_id=1326311125]
 rotation = 0.034906585
@@ -175,6 +181,9 @@ position = Vector2(176, -176)
 
 [node name="Electricidad" parent="." unique_id=1527725779 instance=ExtResource("8_byc5v")]
 position = Vector2(448, -352)
+
+[node name="CollisionPolygon2D" parent="Electricidad" index="1" unique_id=2104453580]
+polygon = PackedVector2Array(128, 96, -192, -64, -64, -128, 256, 32)
 
 [node name="Semaforo" parent="." unique_id=1145332726 instance=ExtResource("9_l4o8x")]
 position = Vector2(-264, -1160)
@@ -187,7 +196,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAD+//3/AgAAAAAAAAD///7/AgAAAAAAAAAAAAEAAgAAAAAAAAABAAAAAgAAAAAAAAD///3/AgAAAAAAAAD///z/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Rio2" index="1" unique_id=2071466395]
-polygon = PackedVector2Array(-68, -134, 252, 32, 133, 94, -195, -70)
+polygon = PackedVector2Array(-64, -128, 256, 32, 128, 96, -192, -64)
 
 [node name="Piscina" parent="." unique_id=1321827573 instance=ExtResource("10_mhfri")]
 position = Vector2(952, -864)
@@ -196,7 +205,7 @@ position = Vector2(952, -864)
 tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAAAAPz/AAABAAAAAAAAAP3/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD+////AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAAAAAMAAAABAAAAAAABAAIAAAABAAAAAAABAAEAAAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAABAAMAAAABAAAAAAABAAQAAAABAAAAAAABAAUAAAABAAAAAAACAAQAAAABAAAAAAACAAMAAAABAAAAAAADAAIAAAABAAAAAAD+//7/AAABAAAAAAD+//3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD9//3/AAABAAAAAAD9//z/AAABAAAAAAD9//v/AAABAAAAAAD+//r/AAABAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAD9//n/AAABAAAAAAD9//r/AAABAAAAAAD8//v/AAABAAAAAAACAAYAAAABAAAAAAACAAUAAAABAAAAAAADAAMAAAABAAAAAAADAAQAAAABAAAAAAD+//f/AAABAAAAAAD///j/AAABAAAAAAD///n/AAABAAAAAAAAAPr/AAABAAAAAAAAAPv/AAABAAAAAAABAPz/AAABAAAAAAABAP3/AAABAAAAAAACAP7/AAABAAAAAAACAP//AAABAAAAAAADAAAAAAABAAAAAAADAAEAAAABAAAAAAAEAAIAAAABAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Piscina" index="1" unique_id=333126962]
-polygon = PackedVector2Array(648, 96, -120, -296, -439, -129, 321, 261)
+polygon = PackedVector2Array(648, 96, -120, -288, -440, -128, 328, 256)
 
 [node name="Piscina2" parent="." unique_id=1348241577 instance=ExtResource("10_mhfri")]
 position = Vector2(-1096, -2016)
@@ -205,7 +214,7 @@ position = Vector2(-1096, -2016)
 tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAAAAPz/AAABAAAAAAAAAP3/AAABAAAAAAABAP7/AAABAAAAAAABAP//AAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAD//wEAAAABAAAAAAD//wAAAAABAAAAAAD+////AAABAAAAAAAAAP7/AAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAD+//7/AAABAAAAAAD+//3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD9//3/AAABAAAAAAD9//z/AAABAAAAAAD9//v/AAABAAAAAAD+//r/AAABAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAD9//n/AAABAAAAAAD9//r/AAABAAAAAAD8//v/AAABAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Piscina2" index="1" unique_id=333126962]
-polygon = PackedVector2Array(328, 0, -184, -256, -439, -129, 64, 128)
+polygon = PackedVector2Array(328, 0, -184, -256, -440, -128, 72, 128)
 
 [node name="Electricidad2" parent="." unique_id=344715386 instance=ExtResource("8_byc5v")]
 position = Vector2(-1088, -2464)
@@ -215,7 +224,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad2" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 
 [node name="Electricidad3" parent="." unique_id=1179944071 instance=ExtResource("8_byc5v")]
 position = Vector2(-1344, -2592)
@@ -225,7 +234,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad3" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 
 [node name="Electricidad4" parent="." unique_id=769612509 instance=ExtResource("8_byc5v")]
 position = Vector2(-1600, -2720)
@@ -235,7 +244,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad4" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Electricidad5" parent="." unique_id=823514685 instance=ExtResource("8_byc5v")]
@@ -246,7 +255,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad5" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Electricidad6" parent="." unique_id=1151614131 instance=ExtResource("8_byc5v")]
@@ -257,7 +266,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad6" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Electricidad7" parent="." unique_id=893627262 instance=ExtResource("8_byc5v")]
@@ -268,7 +277,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad7" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Electricidad8" parent="." unique_id=1956194471 instance=ExtResource("8_byc5v")]
@@ -279,7 +288,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad8" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Electricidad9" parent="." unique_id=180008757 instance=ExtResource("8_byc5v")]
@@ -290,7 +299,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad9" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Electricidad10" parent="." unique_id=692670625 instance=ExtResource("8_byc5v")]
@@ -301,7 +310,7 @@ metadata/_edit_group_ = true
 tile_map_data = PackedByteArray("AAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Electricidad10" index="1" unique_id=2104453580]
-polygon = PackedVector2Array(-192, 0, -256, -32, -65, -130, 0, -96)
+polygon = PackedVector2Array(-192, 0, -256, -32, -64, -128, 0, -96)
 metadata/_edit_group_ = true
 
 [node name="Rio3" parent="." unique_id=1180644585 instance=ExtResource("5_0x2ix")]
@@ -310,6 +319,9 @@ position = Vector2(-3520, -3616)
 [node name="TileMapLayer" parent="Rio3" index="0" unique_id=2012921921]
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAAAAP3/AgAAAAAAAAABAP7/AgAAAAAAAAD+/wEAAgAAAAAAAAD//wIAAgAAAAAAAAABAPz/AgAAAAAAAAABAPv/AgAAAAAAAAACAPz/AgAAAAAAAAABAP3/AgAAAAAAAAA=")
 
+[node name="CollisionPolygon2D" parent="Rio3" index="1" unique_id=2071466395]
+polygon = PackedVector2Array(-192, 64, 256, -160, 384, -96, -64, 128)
+
 [node name="Piscina3" parent="." unique_id=963363227 instance=ExtResource("10_mhfri")]
 position = Vector2(-3784, -3552)
 
@@ -317,7 +329,7 @@ position = Vector2(-3784, -3552)
 tile_map_data = PackedByteArray("AAD/////AAABAAAAAAD///7/AAABAAAAAAD///3/AAABAAAAAAAAAPz/AAABAAAAAAAAAP3/AAABAAAAAAD//wAAAAABAAAAAAD+////AAABAAAAAAAAAP7/AAABAAAAAAD+//7/AAABAAAAAAD+//3/AAABAAAAAAD///z/AAABAAAAAAD///v/AAABAAAAAAD///r/AAABAAAAAAD+//v/AAABAAAAAAD+//z/AAABAAAAAAD9//3/AAABAAAAAAD9//z/AAABAAAAAAD9//v/AAABAAAAAAD+//r/AAABAAAAAAD+//n/AAABAAAAAAD+//j/AAABAAAAAAD9//n/AAABAAAAAAD9//r/AAABAAAAAAD8//v/AAABAAAAAAD///n/AAABAAAAAAAAAPj/AAABAAAAAAAAAPn/AAABAAAAAAAAAPr/AAABAAAAAAA=")
 
 [node name="CollisionPolygon2D" parent="Piscina3" index="1" unique_id=333126962]
-polygon = PackedVector2Array(-56, -192, -184, -256, -439, -129, -56, 64, 200, -64, 72, -128, 200, -192, 72, -256)
+polygon = PackedVector2Array(-56, -192, -184, -256, -440, -128, -56, 64, 200, -64, 72, -128, 200, -192, 72, -256)
 
 [node name="Carretera2" parent="." unique_id=2064021142 instance=ExtResource("7_7oy02")]
 position = Vector2(-4288, -3488)
@@ -345,7 +357,7 @@ position = Vector2(197.14801, -349.50922)
 metadata/_edit_group_ = true
 
 [node name="Electricidad11" parent="." unique_id=1942640731 instance=ExtResource("8_byc5v")]
-position = Vector2(-6080, -2592)
+position = Vector2(-6096, -2600)
 metadata/_edit_group_ = true
 
 [node name="TileMapLayer" parent="Electricidad11" index="0" unique_id=1022504317]
@@ -371,6 +383,9 @@ metadata/_edit_group_ = true
 [node name="TileMapLayer" parent="Rio4" index="0" unique_id=2012921921]
 tile_map_data = PackedByteArray("AAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD//wIAAgAAAAAAAAD+/wAAAgAAAAAAAAD+////AgAAAAAAAAD+//7/AgAAAAAAAAA=")
 
+[node name="CollisionPolygon2D" parent="Rio4" index="1" unique_id=2071466395]
+polygon = PackedVector2Array(-320, 0, -192, -64, 64, 64, -64, 128)
+
 [node name="Rio5" parent="." unique_id=1202116560 instance=ExtResource("5_0x2ix")]
 position = Vector2(-5376, -2880)
 metadata/_edit_group_ = true
@@ -378,12 +393,18 @@ metadata/_edit_group_ = true
 [node name="TileMapLayer" parent="Rio5" index="0" unique_id=2012921921]
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD//wIAAgAAAAAAAAD+////AgAAAAAAAAD///7/AgAAAAAAAAA=")
 
+[node name="CollisionPolygon2D" parent="Rio5" index="1" unique_id=2071466395]
+polygon = PackedVector2Array(-256, 32, -64, -64, 128, 32, -64, 128)
+
 [node name="Rio6" parent="." unique_id=1836589692 instance=ExtResource("5_0x2ix")]
 position = Vector2(-5824, -2720)
 metadata/_edit_group_ = true
 
 [node name="TileMapLayer" parent="Rio6" index="0" unique_id=2012921921]
 tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAAAAAgAAAAAAAAD//wAAAgAAAAAAAAD///7/AgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAA=")
+
+[node name="CollisionPolygon2D" parent="Rio6" index="1" unique_id=2071466395]
+polygon = PackedVector2Array(-256, 32, 0, -96, 192, 0, -64, 128)
 
 [node name="Checkpoint" parent="." unique_id=374578280 instance=ExtResource("11_cppos")]
 position = Vector2(960, 352)
@@ -397,8 +418,18 @@ position = Vector2(-768, -2304)
 [node name="Checkpoint4" parent="." unique_id=1336673021 instance=ExtResource("11_cppos")]
 position = Vector2(-3200, -3520)
 
+[node name="Electricidad13" parent="." unique_id=1272791132 instance=ExtResource("8_byc5v")]
+position = Vector2(-1280, -1728)
+
+[node name="TileMapLayer" parent="Electricidad13" index="0" unique_id=1022504317]
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAABAPz/AgAAAAAAAAAAAP3/AgAAAAAAAAD//wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAgAAAAAAAAD9/wMAAgAAAAAAAAA=")
+
+[node name="CollisionPolygon2D" parent="Electricidad13" index="1" unique_id=2104453580]
+polygon = PackedVector2Array(-256, 160, -320, 128, 192, -128, 256, -96)
+
 [editable path="Rio"]
 [editable path="Carretera"]
+[editable path="Electricidad"]
 [editable path="Rio2"]
 [editable path="Piscina"]
 [editable path="Piscina2"]
@@ -420,3 +451,4 @@ position = Vector2(-3200, -3520)
 [editable path="Rio4"]
 [editable path="Rio5"]
 [editable path="Rio6"]
+[editable path="Electricidad13"]
