@@ -176,6 +176,12 @@ polygon = PackedVector2Array(-192, 192, -448, 64, 192, -256, 448, -128)
 [node name="Path2D" parent="Carretera" index="1" unique_id=1326311125]
 rotation = 0.034906585
 
+[node name="PathFollow2D" parent="Carretera/Path2D" index="0" unique_id=274170767]
+speed = 300
+
+[node name="PathFollow2D2" parent="Carretera/Path2D" index="1" unique_id=95261328]
+speed = 400
+
 [node name="alcantarilla" parent="Carretera" index="2" unique_id=172162382]
 position = Vector2(176, -176)
 
@@ -342,6 +348,12 @@ polygon = PackedVector2Array(-64, 256, -448, 64, -192, -64, 192, 128)
 position = Vector2(-60, 60)
 rotation = -2.146755
 
+[node name="PathFollow2D" parent="Carretera2/Path2D" index="0" unique_id=274170767]
+speed = 300
+
+[node name="PathFollow2D2" parent="Carretera2/Path2D" index="1" unique_id=95261328]
+speed = 350
+
 [node name="alcantarilla" parent="Carretera2" index="2" unique_id=172162382]
 position = Vector2(-168, 24)
 
@@ -351,6 +363,12 @@ rotation = -2.1642082
 
 [node name="CollisionPolygon2D" parent="Semaforo2" index="0" unique_id=1501982923]
 polygon = PackedVector2Array(149.84375, -295.97168, 150.84375, -399.97168, 244.84375, -398.97168, 245.84375, -295.97168)
+
+[node name="PathFollow2D" parent="Semaforo2/Path2D" parent_id_path=PackedInt32Array(1178326526, 423162806) index="0" unique_id=1849471906]
+speed = 300
+
+[node name="PathFollow2D2" parent="Semaforo2/Path2D" parent_id_path=PackedInt32Array(1178326526, 423162806) index="1" unique_id=1476647878]
+speed = 400
 
 [node name="semaforo" parent="Semaforo2" index="2" unique_id=1262785045]
 position = Vector2(197.14801, -349.50922)

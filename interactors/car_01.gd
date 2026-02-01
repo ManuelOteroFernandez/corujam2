@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-const speed = 200
+@export var speed = 200
 
 @export var stop_point_percent = 0.52
 
