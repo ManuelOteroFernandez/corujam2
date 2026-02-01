@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://46jq7t0kmgjd"]
+
+[ext_resource type="Script" uid="uid://b70w032lcv5vh" path="res://interactors/carretera.gd" id="1_m75vb"]
+[ext_resource type="Script" uid="uid://b5mafgosmohg7" path="res://interactors/car_01.gd" id="1_qmjjp"]
+[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_vghxt"]
+[ext_resource type="Script" uid="uid://ipg7aqwblnmj" path="res://interactors/alcantarilla.gd" id="3_633k1"]
+[ext_resource type="Script" uid="uid://b66tnf1sota0r" path="res://interactors/area_car.gd" id="4_d51dy"]
+
+[sub_resource type="Curve2D" id="Curve2D_qmjjp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 977, -661, 0, 0, 0, 0, 64.05847, -142.03462, 0, 0, 0, 0, -586, 214)
+}
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m75vb"]
+radius = 66.24194
+
+[node name="Carretera" type="Area2D" unique_id=1180991772]
+script = ExtResource("1_m75vb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1269882635]
+polygon = PackedVector2Array(-192, 193, -442, 64, 191, -256, 439, -128)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1326311125]
+curve = SubResource("Curve2D_qmjjp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=274170767]
+position = Vector2(977, -661)
+rotation = 2.6246917
+script = ExtResource("1_qmjjp")
+
+[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=675929995]
+texture = ExtResource("1_vghxt")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=345152585 groups=["instand_damage"]]
+script = ExtResource("4_d51dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D" unique_id=1664043565]
+shape = SubResource("CircleShape2D_m75vb")
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" unique_id=95261328]
+position = Vector2(542.3225, -413.90582)
+rotation = 2.6246917
+h_offset = 500.0
+script = ExtResource("1_qmjjp")
+
+[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D2" unique_id=1853105038]
+position = Vector2(-50, -128)
+texture = ExtResource("1_vghxt")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D2" unique_id=1203053197 groups=["instand_damage"]]
+position = Vector2(-50, -128)
+script = ExtResource("4_d51dy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D2/Area2D" unique_id=1467176339]
+shape = SubResource("CircleShape2D_m75vb")
+
+[node name="alcantarilla" type="Sprite2D" parent="." unique_id=172162382]
+position = Vector2(49, -74)
+texture = ExtResource("1_vghxt")
+script = ExtResource("3_633k1")
+texture_active = ExtResource("1_vghxt")
+texture_inactive = ExtResource("1_vghxt")
+
+[node name="Timer" type="Timer" parent="." unique_id=922257244]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

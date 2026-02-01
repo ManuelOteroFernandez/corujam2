@@ -36,5 +36,5 @@ func _on_timer_timeout() -> void:
 		manolo_die(damage_area)
 		
 func manolo_die(area:Area2D):
-		manolo_dead_signal.emit(area.get_death_text)
+		manolo_dead_signal.emit(area.get_death_text())
 		queue_free()
