@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://shl2ko3hyreg"]
+
+[ext_resource type="Script" uid="uid://bo0sbjt1iacyk" path="res://interactors/semaforo.gd" id="1_k5rxa"]
+[ext_resource type="Script" uid="uid://b5mafgosmohg7" path="res://interactors/car_01.gd" id="2_7muef"]
+[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="3_f4h1p"]
+[ext_resource type="Script" uid="uid://b66tnf1sota0r" path="res://interactors/area_car.gd" id="4_by4if"]
+[ext_resource type="Script" uid="uid://ipg7aqwblnmj" path="res://interactors/alcantarilla.gd" id="5_3gflv"]
+
+[sub_resource type="Curve2D" id="Curve2D_sc0cp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 977, -661, 0, 0, 0, 0, 64.05847, -142.03462, 0, 0, 0, 0, -586, 214)
+}
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hs8nw"]
+radius = 66.24194
+
+[node name="Semaforo" type="Area2D" unique_id=1145332726]
+script = ExtResource("1_k5rxa")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1501982923]
+polygon = PackedVector2Array(-53, -124, -52, -228, 42, -227, 43, -124)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=423162806]
+curve = SubResource("Curve2D_sc0cp")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1849471906]
+position = Vector2(977, -661)
+rotation = 2.6246917
+script = ExtResource("2_7muef")
+
+[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1770479998]
+texture = ExtResource("3_f4h1p")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=1769480987 groups=["instand_damage"]]
+script = ExtResource("4_by4if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D" unique_id=1524967932]
+shape = SubResource("CircleShape2D_hs8nw")
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" unique_id=1476647878]
+position = Vector2(542.3225, -413.90582)
+rotation = 2.6246917
+h_offset = 500.0
+script = ExtResource("2_7muef")
+
+[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D2" unique_id=220941657]
+position = Vector2(-50, -128)
+texture = ExtResource("3_f4h1p")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D2" unique_id=383145380 groups=["instand_damage"]]
+position = Vector2(-50, -128)
+script = ExtResource("4_by4if")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D2/Area2D" unique_id=1672045411]
+shape = SubResource("CircleShape2D_hs8nw")
+
+[node name="semaforo" type="Sprite2D" parent="." unique_id=1262785045]
+position = Vector2(-7.9999995, -176)
+scale = Vector2(0.6796875, 0.6953125)
+texture = ExtResource("3_f4h1p")
+script = ExtResource("5_3gflv")
+texture_active = ExtResource("3_f4h1p")
+texture_inactive = ExtResource("3_f4h1p")
+
+[node name="Timer" type="Timer" parent="." unique_id=1668534184]
+wait_time = 3.0
+one_shot = true

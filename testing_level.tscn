@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="2_b55i6"]
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="2_haa73"]
 [ext_resource type="PackedScene" uid="uid://gnwu87y3yf7q" path="res://interactors/interactorTest.tscn" id="3_b55i6"]
-[ext_resource type="PackedScene" uid="uid://46jq7t0kmgjd" path="res://interactors/carretera.tscn" id="4_du6cx"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="5_th68x"]
 [ext_resource type="PackedScene" uid="uid://33i8k6kuf66t" path="res://npc/npc_path.tscn" id="7_50fuq"]
+[ext_resource type="PackedScene" uid="uid://shl2ko3hyreg" path="res://interactors/semaforo.tscn" id="7_nha3r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hra"]
 size = Vector2(126, 73)
@@ -43,9 +43,6 @@ shape = SubResource("RectangleShape2D_n3hra")
 [node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=1050051514]
 texture = ExtResource("2_b55i6")
 
-[node name="Carretera" parent="." unique_id=1180991772 instance=ExtResource("4_du6cx")]
-position = Vector2(395, 26)
-
 [node name="Nube" parent="." unique_id=774090252 instance=ExtResource("2_haa73")]
 position = Vector2(668, 94)
 
@@ -59,3 +56,6 @@ position_smoothing_speed = 3.0
 position = Vector2(552, 103)
 curve = SubResource("Curve2D_nha3r")
 stop_points = Array[float]([9999.0])
+
+[node name="Semaforo" parent="." unique_id=1145332726 instance=ExtResource("7_nha3r")]
+position = Vector2(215, 68)
