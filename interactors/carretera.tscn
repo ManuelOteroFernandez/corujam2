@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b5mafgosmohg7" path="res://interactors/car_01.gd" id="1_qmjjp"]
 [ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_vghxt"]
 [ext_resource type="Script" uid="uid://ipg7aqwblnmj" path="res://interactors/alcantarilla.gd" id="3_633k1"]
+[ext_resource type="Texture2D" uid="uid://upsjn7mq3w13" path="res://Assets/Coche.png" id="3_yghvh"]
 [ext_resource type="Script" uid="uid://b66tnf1sota0r" path="res://interactors/area_car.gd" id="4_d51dy"]
 
 [sub_resource type="Curve2D" id="Curve2D_qmjjp"]
@@ -29,8 +30,12 @@ position = Vector2(977, -661)
 rotation = 2.6246917
 script = ExtResource("1_qmjjp")
 
-[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=675929995]
-texture = ExtResource("1_vghxt")
+[node name="Icon2" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1147514821]
+position = Vector2(-8.520233, 17.011887)
+rotation = 0.5096362
+scale = Vector2(0.5237826, 0.5237826)
+texture = ExtResource("3_yghvh")
+flip_v = true
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=345152585 groups=["instand_damage"]]
 script = ExtResource("4_d51dy")
@@ -45,8 +50,11 @@ h_offset = 500.0
 script = ExtResource("1_qmjjp")
 
 [node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D2" unique_id=1853105038]
-position = Vector2(-50, -128)
-texture = ExtResource("1_vghxt")
+position = Vector2(-54.08524, -106.55502)
+rotation = 0.50963616
+scale = Vector2(0.5237826, 0.5237826)
+texture = ExtResource("3_yghvh")
+flip_v = true
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D2" unique_id=1203053197 groups=["instand_damage"]]
 position = Vector2(-50, -128)

@@ -14,7 +14,7 @@ func _ready() -> void:
 	animated_sprite_2d.play("back")
 
 func _process(delta: float) -> void:
-	if get_parent().is_running:
+	if get_parent().get_parent().is_running:
 		if not animated_sprite_2d.is_playing():
 			animated_sprite_2d.play()
 	else:

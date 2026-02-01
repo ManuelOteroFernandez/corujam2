@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bo0sbjt1iacyk" path="res://interactors/semaforo.gd" id="1_k5rxa"]
 [ext_resource type="Script" uid="uid://b5mafgosmohg7" path="res://interactors/car_01.gd" id="2_7muef"]
-[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="3_f4h1p"]
 [ext_resource type="Script" uid="uid://b66tnf1sota0r" path="res://interactors/area_car.gd" id="4_by4if"]
+[ext_resource type="Texture2D" uid="uid://upsjn7mq3w13" path="res://Assets/Coche.png" id="4_f4h1p"]
 [ext_resource type="Script" uid="uid://ipg7aqwblnmj" path="res://interactors/alcantarilla.gd" id="5_3gflv"]
 [ext_resource type="Texture2D" uid="uid://bhmt4eib5xuj3" path="res://Assets/SemaforoRojo.png" id="5_f4h1p"]
 [ext_resource type="Texture2D" uid="uid://cr7qupgureb5a" path="res://Assets/SemaforoVerde.png" id="7_by4if"]
@@ -32,14 +32,18 @@ position = Vector2(977, -661)
 rotation = 2.6246917
 script = ExtResource("2_7muef")
 
-[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1770479998]
-texture = ExtResource("3_f4h1p")
-
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=1769480987 groups=["instand_damage"]]
 script = ExtResource("4_by4if")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D" unique_id=1524967932]
 shape = SubResource("CircleShape2D_hs8nw")
+
+[node name="Icon2" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1626560290]
+position = Vector2(-8.520233, 17.011887)
+rotation = 0.5096362
+scale = Vector2(0.5237826, 0.5237826)
+texture = ExtResource("4_f4h1p")
+flip_v = true
 
 [node name="PathFollow2D2" type="PathFollow2D" parent="Path2D" unique_id=1476647878]
 position = Vector2(542.3225, -413.90582)
@@ -47,9 +51,12 @@ rotation = 2.6246917
 h_offset = 500.0
 script = ExtResource("2_7muef")
 
-[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D2" unique_id=220941657]
-position = Vector2(-50, -128)
-texture = ExtResource("3_f4h1p")
+[node name="Icon" type="Sprite2D" parent="Path2D/PathFollow2D2" unique_id=1548199241]
+position = Vector2(-54.085205, -106.55502)
+rotation = 0.5096362
+scale = Vector2(0.5237826, 0.5237826)
+texture = ExtResource("4_f4h1p")
+flip_v = true
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D2" unique_id=383145380 groups=["instand_damage"]]
 position = Vector2(-50, -128)

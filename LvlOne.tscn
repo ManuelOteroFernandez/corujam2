@@ -352,8 +352,16 @@ rotation = -2.146755
 [node name="PathFollow2D" parent="Carretera2/Path2D" index="0" unique_id=274170767]
 speed = 300
 
+[node name="Icon2" parent="Carretera2/Path2D/PathFollow2D" index="0" unique_id=1147514821]
+rotation = -0.50963616
+flip_v = false
+
 [node name="PathFollow2D2" parent="Carretera2/Path2D" index="1" unique_id=95261328]
 speed = 350
+
+[node name="Icon" parent="Carretera2/Path2D/PathFollow2D2" index="0" unique_id=1853105038]
+rotation = -0.50963616
+flip_v = false
 
 [node name="alcantarilla" parent="Carretera2" index="2" unique_id=172162382]
 position = Vector2(-168, 24)
@@ -368,8 +376,16 @@ polygon = PackedVector2Array(151.68115, -301.77295, 331.35156, -189.02734, 309.7
 [node name="PathFollow2D" parent="Semaforo2/Path2D" parent_id_path=PackedInt32Array(1178326526, 423162806) index="0" unique_id=1849471906]
 speed = 300
 
+[node name="Icon2" parent="Semaforo2/Path2D/PathFollow2D" index="1" unique_id=1626560290]
+rotation = -0.50963616
+flip_v = false
+
 [node name="PathFollow2D2" parent="Semaforo2/Path2D" parent_id_path=PackedInt32Array(1178326526, 423162806) index="1" unique_id=1476647878]
 speed = 400
+
+[node name="Icon" parent="Semaforo2/Path2D/PathFollow2D2" index="0" unique_id=1548199241]
+rotation = -0.50963616
+flip_v = false
 
 [node name="semaforo" parent="Semaforo2" index="2" unique_id=1262785045]
 position = Vector2(223.6318, -220.6736)
