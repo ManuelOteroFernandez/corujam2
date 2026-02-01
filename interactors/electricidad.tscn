@@ -1,0 +1,14 @@
+[gd_scene format=4 uid="uid://ca2lkwil1y3ql"]
+
+[ext_resource type="TileSet" uid="uid://d24kjl34oy88v" path="res://tile_set.tres" id="1_poo2d"]
+[ext_resource type="Script" uid="uid://bduwuymx6b2sr" path="res://interactors/electricidad.gd" id="1_v1gxf"]
+
+[node name="Electricidad" type="Area2D" unique_id=1527725779]
+script = ExtResource("1_v1gxf")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1022504317]
+tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAA=")
+tile_set = ExtResource("1_poo2d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2104453580]
+polygon = PackedVector2Array(129, 93, -196, -66, -65, -130, 254, 30)
