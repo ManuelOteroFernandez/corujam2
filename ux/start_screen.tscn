@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://p7x1ooaaecr7" path="res://ux/Web437_Trident_8x16.woff" id="2_alc0j"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="3_gshpb"]
 
-[node name="WinScreen" type="CanvasLayer" unique_id=1930916143]
+[node name="StartScreen" type="CanvasLayer" unique_id=1930916143]
 script = ExtResource("1_to12h")
-text_list = Array[String](["Pendiende de guion"])
+text_list = Array[String](["*Ring* *Ring*", "- Hola, ya he salido de la compra.", "- Cómo que tenemos que hablar? No me lo puedes decir por teléfono?", "- De acuerdo voy para allá. Hablamos luego."])
 
 [node name="Container" type="Control" parent="." unique_id=325274922]
 layout_mode = 3
