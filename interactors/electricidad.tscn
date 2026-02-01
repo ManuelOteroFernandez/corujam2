@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://d24kjl34oy88v" path="res://tile_set.tres" id="1_poo2d"]
 [ext_resource type="Script" uid="uid://bduwuymx6b2sr" path="res://interactors/electricidad.gd" id="1_v1gxf"]
 
-[node name="Electricidad" type="Area2D" unique_id=1527725779]
+[node name="Electricidad" type="Area2D" unique_id=1527725779 groups=["damage"]]
 script = ExtResource("1_v1gxf")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1022504317]
