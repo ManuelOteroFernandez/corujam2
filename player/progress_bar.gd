@@ -3,7 +3,7 @@ extends ProgressBar
 @onready var timer: Timer = $"../Timer"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	visible = value > 0
 	if timer.is_stopped():
 		value = 0
