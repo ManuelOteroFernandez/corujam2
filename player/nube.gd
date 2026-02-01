@@ -2,6 +2,8 @@ class_name Nube extends CharacterBody2D
 
 signal change_power_signal(power:Powers)
 signal active_power_signal(power:Powers)
+@onready var icon_2: AnimatedSprite2D = $Icon2
+@onready var icon: AnimatedSprite2D = $Icon
 
 enum Powers {
 	TORMENTA = 0,
@@ -22,6 +24,10 @@ const SPEED = 300.0
 @onready var timer: Timer = $Timer
 
 var current_power = Powers.SECO
+
+
+func _ready() -> void:
+	change_power(Powers.SECO)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("power_01"):
@@ -55,9 +61,27 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
+func update_anim(anim:String):
+	icon.play(anim)
+	icon_2.play(anim)
+
 func change_power(power:Powers):
 	timer.stop()
 	current_power = power
+	
+	if power == Powers.TORMENTA:
+		update_anim("tormenta")
+		
+	elif power == Powers.INUNDADO:
+		update_anim("lluvia")
+		
+	elif power == Powers.FRIO:
+		update_anim("frio")
+		
+	elif power == Powers.SECO:
+		update_anim("viento")
+	
+	
 	change_power_signal.emit(current_power)
 	
 func get_radius():

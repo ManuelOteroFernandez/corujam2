@@ -1,8 +1,117 @@
 [gd_scene format=3 uid="uid://c1ovovfk1kbhq"]
 
 [ext_resource type="Script" uid="uid://d1dyraxr4ku3q" path="res://player/nube.gd" id="1_wkjyh"]
-[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_x8dao"]
+[ext_resource type="Texture2D" uid="uid://bwuyg2iumpmkd" path="res://Assets/Nube-frio1.png" id="2_eaxyr"]
+[ext_resource type="Texture2D" uid="uid://b2wnrws7uw1ce" path="res://Assets/Nube-frio2.png" id="3_2mmh2"]
 [ext_resource type="Script" uid="uid://cscywnxygysap" path="res://player/progress_bar.gd" id="3_035ai"]
+[ext_resource type="Texture2D" uid="uid://dulfy5moxhy2e" path="res://Assets/Nube-lluvia1.png" id="4_fnidh"]
+[ext_resource type="Texture2D" uid="uid://i6k764k00wqp" path="res://Assets/Nube-lluvia2.png" id="5_popwf"]
+[ext_resource type="Texture2D" uid="uid://jjaeeeqnvl3o" path="res://Assets/Nube-Tormenta1.png" id="6_wfsp5"]
+[ext_resource type="Texture2D" uid="uid://fmuc5mm7omgu" path="res://Assets/Nube-Tormenta2.png" id="7_m0nke"]
+[ext_resource type="Texture2D" uid="uid://bj16na2u5dl66" path="res://Assets/Nube-viento1.png" id="8_bxiw0"]
+[ext_resource type="Texture2D" uid="uid://hsw2hk8e2gje" path="res://Assets/Nube-viento2.png" id="9_mvssd"]
+[ext_resource type="Texture2D" uid="uid://clfobre107vsc" path="res://Assets/Frio1.png" id="10_cp7lo"]
+[ext_resource type="Texture2D" uid="uid://cqlq5tytm3c2r" path="res://Assets/Frio2.png" id="11_d4l71"]
+[ext_resource type="Texture2D" uid="uid://clbwgd2vtm30u" path="res://Assets/Lluvia1.png" id="12_hdwe3"]
+[ext_resource type="Texture2D" uid="uid://cyh6oau3cc5hg" path="res://Assets/Lluvia2.png" id="13_5818v"]
+[ext_resource type="Texture2D" uid="uid://6pfx83m4kgee" path="res://Assets/Rayos1.png" id="14_umbkx"]
+[ext_resource type="Texture2D" uid="uid://bc07eew8hqo3b" path="res://Assets/Rayos2.png" id="15_wy7b3"]
+[ext_resource type="Texture2D" uid="uid://c6ibxowbcm7v0" path="res://Assets/Viento1.png" id="16_2uspf"]
+[ext_resource type="Texture2D" uid="uid://d0t1e5asasc43" path="res://Assets/Viento2.png" id="17_vqcji"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b58r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cp7lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d4l71")
+}],
+"loop": true,
+"name": &"frio",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_hdwe3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5818v")
+}],
+"loop": true,
+"name": &"lluvia",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_umbkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wy7b3")
+}],
+"loop": true,
+"name": &"tormenta",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_2uspf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vqcji")
+}],
+"loop": true,
+"name": &"viento",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4hkk5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eaxyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2mmh2")
+}],
+"loop": true,
+"name": &"frio",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fnidh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_popwf")
+}],
+"loop": true,
+"name": &"lluvia",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wfsp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m0nke")
+}],
+"loop": true,
+"name": &"tormenta",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bxiw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mvssd")
+}],
+"loop": true,
+"name": &"viento",
+"speed": 3.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wkjyh"]
 radius = 20.0
@@ -11,18 +120,28 @@ radius = 20.0
 motion_mode = 1
 script = ExtResource("1_wkjyh")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=378098902]
+[node name="Icon2" type="AnimatedSprite2D" parent="." unique_id=383517509]
+position = Vector2(2, -20)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_x8dao")
+sprite_frames = SubResource("SpriteFrames_b58r7")
+animation = &"viento"
+frame_progress = 0.6834813
+
+[node name="Icon" type="AnimatedSprite2D" parent="." unique_id=340257692]
+position = Vector2(2, -65)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_4hkk5")
+animation = &"viento"
+frame_progress = 0.7434924
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1952391549]
 shape = SubResource("CircleShape2D_wkjyh")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1699817396]
 offset_left = -39.0
-offset_top = -43.0
+offset_top = -108.0
 offset_right = 39.0
-offset_bottom = -35.0
+offset_bottom = -100.0
 max_value = 1.0
 show_percentage = false
 script = ExtResource("3_035ai")
