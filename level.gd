@@ -17,6 +17,10 @@ func _ready() -> void:
 	manolo.manolo_win_signal.connect(on_manolo_win)
 
 	death_screen.continue_signal.connect(continue_game)
+	
+	await get_tree().create_timer(2).timeout
+	
+	npc_path.run()
 
 func continue_game():
 	death_screen.hide_screen()
