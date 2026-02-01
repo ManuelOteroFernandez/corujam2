@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 win="Si manolo lo toca gana"
 damage=""
 instand_damage="Muere instantaneamente"
+checkpoint=""
 
 [input]
 
@@ -58,3 +59,4 @@ interact={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.3083697, 0.2652244, 0.45030797, 1)

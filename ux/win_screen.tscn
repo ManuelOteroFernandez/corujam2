@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bhde1qf2hjnyg"]
+
+[ext_resource type="Script" uid="uid://cc0javmphjgts" path="res://ux/win_screen.gd" id="1_82l3k"]
+[ext_resource type="FontFile" uid="uid://p7x1ooaaecr7" path="res://ux/Web437_Trident_8x16.woff" id="2_2cxnd"]
+[ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="3_2cxnd"]
+
+[node name="WinScreen" type="CanvasLayer" unique_id=1930916143]
+script = ExtResource("1_82l3k")
+text_list = Array[String](["gaste", "ed e"])
+
+[node name="Container" type="Control" parent="." unique_id=325274922]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Container" unique_id=1353567822]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04755766, 0.047557645, 0.047557645, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container" unique_id=36834756]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.5
+anchor_right = 0.95000005
+anchor_bottom = 0.5
+offset_left = 4.3999977
+offset_top = -48.0
+offset_right = -1.4000244
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container/VBoxContainer" unique_id=589966273]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_2cxnd")
+theme_override_font_sizes/normal_font_size = 30
+text = "sdgsdfsdfsdf"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Container/VBoxContainer" unique_id=95083753]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Volver al menú"
+
+[node name="Timer" type="Timer" parent="." unique_id=621366442]
+wait_time = 5.0
+autostart = true
+
+[node name="transition_screen" parent="." unique_id=1655704161 instance=ExtResource("3_2cxnd")]
+
+[connection signal="pressed" from="Container/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

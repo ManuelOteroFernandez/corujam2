@@ -1,4 +1,4 @@
-extends Path2D
+class_name NpcPath extends Path2D
 
 signal manolo_stop_signal
 
@@ -6,6 +6,7 @@ signal manolo_stop_signal
 @export var speed = 100
 
 @onready var follow = $PathFollow2D
+@onready var manolo: Area2D = $PathFollow2D/Manolo
 
 var current_goal = 0
 var is_running = false
@@ -36,3 +37,8 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("ui_accept"):
 		stop()
 	
+func get_manolo():
+	return manolo
+	
+func set_progress(progress:float):
+	follow.progress = progress
