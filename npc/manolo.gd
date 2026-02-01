@@ -1,9 +1,11 @@
-extends Area2D
+class_name Manolo extends Area2D
 
 signal manolo_dead_signal(text:String)
 signal manolo_win_signal
+signal manolo_checkpoint_signal(progress:float)
 
 @onready var timer: Timer = $Timer
+@onready var path_follow_2d: PathFollow2D = $".."
 
 var damage_area = null
 
@@ -12,6 +14,8 @@ func _on_area_entered(area: Area2D) -> void:
 		start_check_is_alive(area)
 	if area.is_in_group("instand_damage"):
 		manolo_die(area)
+	if area.is_in_group("checkpoint"):
+		manolo_checkpoint_signal.emit(path_follow_2d.progress)
 	elif area.is_in_group("win"):
 		manolo_win_signal.emit()
 
@@ -37,4 +41,4 @@ func _on_timer_timeout() -> void:
 		
 func manolo_die(area:Area2D):
 		manolo_dead_signal.emit(area.get_death_text())
-		queue_free()
+		

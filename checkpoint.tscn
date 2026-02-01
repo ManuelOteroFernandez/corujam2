@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c2dygt54i7mod"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nha3r"]
+radius = 9.0
+
+[node name="Checkpoint" type="Area2D" unique_id=374578280 groups=["checkpoint"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1091829601]
+shape = SubResource("CircleShape2D_nha3r")
