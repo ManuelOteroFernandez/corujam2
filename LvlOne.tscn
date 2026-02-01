@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://clx7q84snlk4b"]
+[gd_scene format=4 uid="uid://b3meitm8dro5k"]
 
 [ext_resource type="Texture2D" uid="uid://cnfq5o0fm38jk" path="res://abstractTiles_sheet.png" id="1_a1npu"]
 [ext_resource type="Script" uid="uid://wlrtprfowy3" path="res://level.gd" id="1_rllm6"]
@@ -8,15 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://c1ovovfk1kbhq" path="res://player/nube.tscn" id="3_7k2f8"]
 [ext_resource type="Texture2D" uid="uid://dqsdus25s2sqn" path="res://Assets/Tile-Calzada-Seca.png" id="3_rllm6"]
 [ext_resource type="PackedScene" uid="uid://d1q3g8kxlrua1" path="res://interactors/rio.tscn" id="5_0x2ix"]
-[ext_resource type="PackedScene" path="res://interactors/carretera.tscn" id="7_7oy02"]
-[ext_resource type="PackedScene" path="res://interactors/electricidad.tscn" id="8_byc5v"]
-[ext_resource type="PackedScene" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
-[ext_resource type="PackedScene" path="res://interactors/piscina.tscn" id="10_mhfri"]
-[ext_resource type="PackedScene" path="res://checkpoint.tscn" id="11_cppos"]
+[ext_resource type="PackedScene" uid="uid://46jq7t0kmgjd" path="res://interactors/carretera.tscn" id="7_7oy02"]
+[ext_resource type="PackedScene" uid="uid://ca2lkwil1y3ql" path="res://interactors/electricidad.tscn" id="8_byc5v"]
+[ext_resource type="PackedScene" uid="uid://shl2ko3hyreg" path="res://interactors/semaforo.tscn" id="9_l4o8x"]
+[ext_resource type="PackedScene" uid="uid://dmxf13rdkyev2" path="res://interactors/piscina.tscn" id="10_mhfri"]
+[ext_resource type="PackedScene" uid="uid://c2dygt54i7mod" path="res://checkpoint.tscn" id="11_cppos"]
 [ext_resource type="PackedScene" uid="uid://ukefjid0axkw" path="res://ux/message_manager.tscn" id="13_mhfri"]
-[ext_resource type="PackedScene" path="res://ux/death_screen.tscn" id="14_cppos"]
+[ext_resource type="PackedScene" uid="uid://dvj63ppnphvwh" path="res://ux/death_screen.tscn" id="14_cppos"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="15_einqo"]
-[ext_resource type="PackedScene" path="res://win_area.tscn" id="16_xos8u"]
+[ext_resource type="PackedScene" uid="uid://b7wrhg522blx" path="res://win_area.tscn" id="16_xos8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3hra"]
 texture = ExtResource("1_a1npu")
@@ -362,7 +362,7 @@ position = Vector2(-4608, -3232)
 rotation = -2.1642082
 
 [node name="CollisionPolygon2D" parent="Semaforo2" index="0" unique_id=1501982923]
-polygon = PackedVector2Array(149.84375, -295.97168, 150.84375, -399.97168, 244.84375, -398.97168, 245.84375, -295.97168)
+polygon = PackedVector2Array(151.68115, -301.77295, 331.35156, -189.02734, 309.73486, -140.88477, 106.75391, -251.26025)
 
 [node name="PathFollow2D" parent="Semaforo2/Path2D" parent_id_path=PackedInt32Array(1178326526, 423162806) index="0" unique_id=1849471906]
 speed = 300
@@ -371,7 +371,8 @@ speed = 300
 speed = 400
 
 [node name="semaforo" parent="Semaforo2" index="2" unique_id=1262785045]
-position = Vector2(197.14801, -349.50922)
+position = Vector2(223.6318, -220.6736)
+rotation = 2.1485002
 metadata/_edit_group_ = true
 
 [node name="Electricidad11" parent="." unique_id=1942640731 instance=ExtResource("8_byc5v")]

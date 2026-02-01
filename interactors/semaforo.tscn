@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="3_f4h1p"]
 [ext_resource type="Script" uid="uid://b66tnf1sota0r" path="res://interactors/area_car.gd" id="4_by4if"]
 [ext_resource type="Script" uid="uid://ipg7aqwblnmj" path="res://interactors/alcantarilla.gd" id="5_3gflv"]
+[ext_resource type="Texture2D" uid="uid://bhmt4eib5xuj3" path="res://Assets/SemaforoRojo.png" id="5_f4h1p"]
+[ext_resource type="Texture2D" uid="uid://cr7qupgureb5a" path="res://Assets/SemaforoVerde.png" id="7_by4if"]
 
 [sub_resource type="Curve2D" id="Curve2D_sc0cp"]
 _data = {
@@ -19,7 +21,8 @@ radius = 66.24194
 script = ExtResource("1_k5rxa")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1501982923]
-polygon = PackedVector2Array(-53, -124, -52, -228, 42, -227, 43, -124)
+position = Vector2(-83.2, -76.29999)
+polygon = PackedVector2Array(-45, -302, -56, -33, 40, -36, 32, -299)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=423162806]
 curve = SubResource("Curve2D_sc0cp")
@@ -56,12 +59,12 @@ script = ExtResource("4_by4if")
 shape = SubResource("CircleShape2D_hs8nw")
 
 [node name="semaforo" type="Sprite2D" parent="." unique_id=1262785045]
-position = Vector2(-7.9999995, -176)
+position = Vector2(-91.19999, -252.29999)
 scale = Vector2(0.6796875, 0.6953125)
-texture = ExtResource("3_f4h1p")
+texture = ExtResource("5_f4h1p")
 script = ExtResource("5_3gflv")
-texture_active = ExtResource("3_f4h1p")
-texture_inactive = ExtResource("3_f4h1p")
+texture_active = ExtResource("7_by4if")
+texture_inactive = ExtResource("5_f4h1p")
 
 [node name="Timer" type="Timer" parent="." unique_id=1668534184]
 wait_time = 3.0
