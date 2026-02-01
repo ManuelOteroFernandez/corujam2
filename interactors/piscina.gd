@@ -13,10 +13,10 @@ func on_active_nube_interact(power:Nube.Powers):
 				var cell_atlas_pos = tile_map_layer.get_cell_atlas_coords(cell_pos)
 				tile_map_layer.set_cell(cell_pos,0,cell_atlas_pos+Vector2i(0,1))
 		
-func on_nube_interact(power:Nube.Powers):
+func on_nube_interact(_power:Nube.Powers):
 	pass
 	
-func is_manolo_alive(manolo_pos:Vector2):
+func is_manolo_alive(_manolo_pos:Vector2):
 	return times == max_times_to_fill
 	
 func get_death_text():
