@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://ukefjid0axkw"]
 
+[ext_resource type="Script" uid="uid://f1la477berwo" path="res://ux/message_manager.gd" id="1_6o0gr"]
 [ext_resource type="Texture2D" uid="uid://w4ykkbt58gra" path="res://Assets/UI/Cuadro de diálogo.png" id="1_w6iqp"]
 [ext_resource type="FontFile" uid="uid://p7x1ooaaecr7" path="res://ux/Web437_Trident_8x16.woff" id="2_olj0w"]
 
 [node name="MessageManager" type="CanvasLayer" unique_id=132074892]
+script = ExtResource("1_6o0gr")
+text_list = Array[String](["- Pufffff.", "- Qué será eso que me quiere decir.", "- ¿Qué tan importante es para que me lo tenga que decir en persona sí o sí?", "- Espero que no sea algo como que se ha electrocutado el gato…", "- O que el perro se comió mi alijo de chocolate… Doble tragedia…", "- Ahora que lo pienso, la lavadora ya empezaba a hacer ruidos raros.", "- Hoy ha tenido que ir a revisión al médico…", "- Su *familiar* no se encontraba muy bien, espero que no le pasase nada.", "- No habrá invocado finalmente un demonio la señora Encarnita y la ha liado…", "- Me ha llegado una carta de desahucio… Nunca me fié de nuestro casero", "- Por favor que no se haya roto el ordenador… Con la que está cayendo por culpa de la IA.", "- No será que ya no me quiere.", "- Que no sea terminal, por el amor de dios…"])
 
 [node name="Control" type="Control" parent="." unique_id=1748219946]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,3 +50,8 @@ text = "- Por favor que no se haya roto el ordenador… Con la que está cayendo
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="." unique_id=2142963588]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="hide_message"]

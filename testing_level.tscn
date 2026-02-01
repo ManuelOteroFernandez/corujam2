@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c2dygt54i7mod" path="res://checkpoint.tscn" id="8_pdwrp"]
 [ext_resource type="PackedScene" uid="uid://dvj63ppnphvwh" path="res://ux/death_screen.tscn" id="11_oob0o"]
 [ext_resource type="PackedScene" uid="uid://b7wrhg522blx" path="res://win_area.tscn" id="12_m1pso"]
+[ext_resource type="PackedScene" uid="uid://ukefjid0axkw" path="res://ux/message_manager.tscn" id="12_teejf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3hra"]
 size = Vector2(126, 73)
@@ -67,7 +68,7 @@ position = Vector2(818, 104)
 [node name="NPC_path" parent="." unique_id=881674550 instance=ExtResource("7_50fuq")]
 position = Vector2(552, 103)
 curve = SubResource("Curve2D_nha3r")
-stop_points = Array[float]([9999.0])
+stop_points = Array[float]([200.0, 9999.0])
 metadata/_edit_lock_ = true
 
 [node name="DeathScreen" parent="." unique_id=1930916143 instance=ExtResource("11_oob0o")]
@@ -75,4 +76,7 @@ metadata/_edit_lock_ = true
 [node name="transition_screen" parent="." unique_id=1655704161 instance=ExtResource("5_th68x")]
 
 [node name="WinArea" parent="." unique_id=567062255 instance=ExtResource("12_m1pso")]
-position = Vector2(508, 179)
+position = Vector2(1104, 113)
+
+[node name="MessageManager" parent="." unique_id=132074892 node_paths=PackedStringArray("npc_path") instance=ExtResource("12_teejf")]
+npc_path = NodePath("../NPC_path")
