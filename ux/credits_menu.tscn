@@ -1,9 +1,27 @@
 [gd_scene format=3 uid="uid://bcb7p5ay6qjrv"]
 
 [ext_resource type="Script" uid="uid://wuxyyuuod4or" path="res://ux/credits_menu.gd" id="1_3g2t6"]
-[ext_resource type="Texture2D" uid="uid://3icx4awde8gy" path="res://icon.svg" id="1_ejno8"]
 [ext_resource type="FontFile" uid="uid://p7x1ooaaecr7" path="res://ux/Web437_Trident_8x16.woff" id="2_3g2t6"]
+[ext_resource type="Texture2D" uid="uid://bxk38wfb4myib" path="res://Assets/UI/fondo_créditos.jpg" id="2_c5nap"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="2_wr30l"]
+
+[sub_resource type="GDScript" id="GDScript_3g2t6"]
+script/source = "extends RichTextLabel
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(\"https://sonniss.com/gameaudiogdc/\")
+"
 
 [node name="CreditsMenu" type="CanvasLayer" unique_id=1189331394]
 script = ExtResource("1_3g2t6")
@@ -14,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ejno8")
+texture = ExtResource("2_c5nap")
 
 [node name="Container" type="CenterContainer" parent="." unique_id=2019075215]
 offset_right = 1152.0
@@ -24,58 +42,124 @@ offset_bottom = 648.0
 visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=133186692]
-offset_left = 492.0
-offset_top = 298.0
-offset_right = 660.0
-offset_bottom = 350.0
+offset_left = 487.0
+offset_top = 543.0
+offset_right = 655.0
+offset_bottom = 595.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="BtnPlay" type="Button" parent="VBoxContainer" unique_id=1201706811]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3g2t6")
-text = "Comenzar un gran día"
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=208481770]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BtnCredits" type="Button" parent="VBoxContainer" unique_id=1620176451]
+[node name="RafaTag" type="RichTextLabel" parent="HBoxContainer" unique_id=361254827]
 layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 19
+theme_override_font_sizes/bold_font_size = 21
+bbcode_enabled = true
+text = "							
+
+																											[b][u]Créditos[/u][/b]
+
+							[b]Manuel Otero:[/b] Programación.
+							[b]Alex Rey:[/b] Producción, Diseño de juego y niveles, Guión.
+							[b]Eric “MessEd”:[/b] Arte Principal, Animación, Assets gráficos 2D, Interfaz de usuario.
+							[b]Rafa “Zorzamoth” Pérez:[/b] Control de calidad, Créditos, apoyo a otras tareas.
+
+							
+
+
+							- [b]Música:[/b] Pad 3, obtenida del Sonniss Royalty Free Sound Effects Archive.
+							- [b]Efectos de sonido:[/b] varios archivos obtenidos del Sonniss Royalty Free Sound Effects Archive y
+							de los Kenney Game Assets Packs
+							- [b]Tipografía:[/b] Web437_Trident_8x16.woff, obtenida de The Ultimate Oldschool PC Font Pack
+"
+fit_content = true
+script = SubResource("GDScript_3g2t6")
+
+[node name="BtnCredits" type="Button" parent="." unique_id=1620176451]
+offset_left = 487.0
+offset_top = 578.0
+offset_right = 655.0
+offset_bottom = 602.0
 theme_override_fonts/font = ExtResource("2_3g2t6")
 text = "Volver al menú"
 
-[node name="ControldeLinks" type="Control" parent="." unique_id=1479719585]
+[node name="ControldeLinks" type="Control" parent="." unique_id=793157012]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LinkSonniss" type="LinkButton" parent="ControldeLinks" unique_id=1390110388]
+[node name="LinkManu" type="LinkButton" parent="ControldeLinks" unique_id=1782459453]
 layout_mode = 0
-offset_left = 264.0
-offset_top = 483.0
-offset_right = 594.0
-offset_bottom = 523.0
-theme_override_fonts/font = ExtResource("2_3g2t6")
+offset_left = 158.0
+offset_top = 265.0
+offset_right = 272.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "devMO (Manu)"
+uri = "https://devmo-io.itch.io/"
+
+[node name="LinkAlex" type="LinkButton" parent="ControldeLinks" unique_id=939396097]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 264.0
+offset_right = 659.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "AlexHesoyam69 (Alex)"
+uri = "https://alexhesoyam69.itch.io/"
+
+[node name="LinkEric" type="LinkButton" parent="ControldeLinks" unique_id=1323940870]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LinkRafa" type="LinkButton" parent="ControldeLinks" unique_id=1589559789]
+layout_mode = 0
+offset_left = 844.0
+offset_top = 262.0
+offset_right = 988.0
+offset_bottom = 302.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "QA Portfolio (Rafa)"
+uri = "https://zorzamothtb.wixsite.com/rafael-perez-qa"
+
+[node name="LinkSonniss" type="LinkButton" parent="ControldeLinks" unique_id=1077998214]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 496.0
+offset_right = 442.0
+offset_bottom = 536.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sonniss Royalty Free Sound Effects Archive"
 uri = "https://sonniss.com/gameaudiogdc/"
 
-[node name="LinkKenney" type="LinkButton" parent="ControldeLinks" unique_id=28580699]
+[node name="LinkKenney" type="LinkButton" parent="ControldeLinks" unique_id=1471680541]
 layout_mode = 0
-offset_left = 712.0
-offset_top = 542.0
-offset_right = 921.0
-offset_bottom = 582.0
-theme_override_fonts/font = ExtResource("2_3g2t6")
+offset_left = 476.0
+offset_top = 497.0
+offset_right = 685.0
+offset_bottom = 537.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Kenney Game Assets Packs"
 uri = "https://kenney.itch.io/"
 
-[node name="LinkOSPCFP" type="LinkButton" parent="ControldeLinks" unique_id=251844199]
+[node name="LinkOSPCFP" type="LinkButton" parent="ControldeLinks" unique_id=1152491405]
 layout_mode = 0
-offset_left = 759.0
-offset_top = 255.0
-offset_right = 1044.0
-offset_bottom = 295.0
-theme_override_fonts/font = ExtResource("2_3g2t6")
+offset_left = 743.0
+offset_top = 498.0
+offset_right = 1028.0
+offset_bottom = 538.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "The Ultimate Oldschool PC Font Pack"
 uri = "https://int10h.org/oldschool-pc-fonts/fontlist/"
 
-[connection signal="pressed" from="VBoxContainer/BtnCredits" to="." method="_on_btn_credits_pressed"]
+[connection signal="pressed" from="BtnCredits" to="." method="_on_btn_credits_pressed"]
