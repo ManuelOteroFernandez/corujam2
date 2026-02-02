@@ -39,7 +39,7 @@ func on_manolo_dead(text:String):
 	if not npc_path.is_running:
 		return
 		
-	npc_path.stop()
+	npc_path.stop_by_death()
 	
 	death_screen.show_screen(text)
 	

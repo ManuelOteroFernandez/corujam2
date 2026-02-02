@@ -20,6 +20,9 @@ func stop():
 	if current_goal < stop_points.size() - 1:
 		current_goal += 1 
 
+func stop_by_death():
+	is_running = false
+
 func _process(delta: float) -> void:
 	if not is_running:
 		return
@@ -30,12 +33,6 @@ func _process(delta: float) -> void:
 	else:
 		stop()
 
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action("interact"):
-		run()
-	if event.is_action("ui_accept"):
-		stop()
 	
 func get_manolo():
 	return manolo
