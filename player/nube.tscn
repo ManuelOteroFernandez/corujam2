@@ -128,8 +128,8 @@ animation = &"viento"
 frame_progress = 0.6834813
 
 [node name="Icon" type="AnimatedSprite2D" parent="." unique_id=340257692]
-position = Vector2(2, -65)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1, -65)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_4hkk5")
 animation = &"viento"
 frame_progress = 0.7434924
@@ -139,9 +139,9 @@ shape = SubResource("CircleShape2D_wkjyh")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1699817396]
 offset_left = -39.0
-offset_top = -108.0
+offset_top = -136.0
 offset_right = 39.0
-offset_bottom = -100.0
+offset_bottom = -128.0
 max_value = 1.0
 show_percentage = false
 script = ExtResource("3_035ai")
