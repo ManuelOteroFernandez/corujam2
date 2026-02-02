@@ -2,8 +2,8 @@ extends "res://interactors/interactor_base.gd".InteractorBase
 
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
-const KILL_ATLAS_COORD = Vector2i(0,0)
-const HIELO = Vector2(0,1)
+const KILL_ATLAS_COORD = Vector2i(3,2)
+const HIELO = Vector2(2,4)
 
 func on_nube_interact(power:Nube.Powers):
 	pass

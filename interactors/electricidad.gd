@@ -2,8 +2,8 @@ extends "res://interactors/interactor_base.gd".InteractorBase
 
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
-const KILL_ATLAS_COORD = Vector2i(0,0)
-const SECO = Vector2(0,1)
+const KILL_ATLAS_COORD = Vector2i(0,4)
+const SECO = Vector2(2,2)
 
 func get_death_text():
 	return "manolo murio eletrocutado"
@@ -16,7 +16,7 @@ func is_manolo_alive(manolo_pos:Vector2):
 	return kill_atlas_coord != KILL_ATLAS_COORD
 	
 func on_active_nube_interact(power:Nube.Powers):
-	if power == Nube.Powers.FRIO:
+	if power == Nube.Powers.SECO:
 		secar()
 
 func on_nube_interact(power:Nube.Powers):

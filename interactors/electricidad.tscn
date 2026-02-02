@@ -7,7 +7,7 @@
 script = ExtResource("1_v1gxf")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1022504317]
-tile_map_data = PackedByteArray("AAD/////AgAAAAAAAAAAAP7/AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAD///3/AgAAAAAAAAD///7/AgAAAAAAAAD+//3/AgAAAAAAAAD///z/AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////AAABAAQAAAAAAP7/AAABAAQAAAAAAP//AAABAAQAAAAAAAAAAAABAAQAAAABAAAAAAABAAQAAAAAAAEAAAABAAQAAAD///3/AAABAAQAAAD///7/AAABAAQAAAD+//3/AAABAAQAAAD///z/AAABAAQAAAA=")
 tile_set = ExtResource("1_poo2d")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=2104453580]
