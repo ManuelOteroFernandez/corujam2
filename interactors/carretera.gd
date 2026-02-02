@@ -15,7 +15,7 @@ func on_active_nube_interact(_power:Nube.Powers):
 	
 	
 func on_nube_interact(power:Nube.Powers):
-	if power == Nube.Powers.TORMENTA:
+	if power == Nube.Powers.INUNDADO:
 		start_progress()
 	else:
 		stop_progress()
