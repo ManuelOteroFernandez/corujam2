@@ -12,3 +12,6 @@ tile_set = ExtResource("2_ggk2i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=333126962]
 polygon = PackedVector2Array(566, 127, -190, -253, -439, -129, 321, 261)
+
+[node name="Puente" type="TileMapLayer" parent="." unique_id=69449019]
+tile_set = ExtResource("2_ggk2i")
