@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ukefjid0axkw" path="res://ux/message_manager.tscn" id="13_mhfri"]
 [ext_resource type="PackedScene" uid="uid://dvj63ppnphvwh" path="res://ux/death_screen.tscn" id="14_cppos"]
 [ext_resource type="PackedScene" uid="uid://2jfb54qnrue6" path="res://ux/transition_screen.tscn" id="15_einqo"]
+[ext_resource type="AudioStream" uid="uid://bm0l3k3ktdhrw" path="res://sonidos/music/Pad-3_Vol_200.mp3" id="15_l4o8x"]
 [ext_resource type="PackedScene" uid="uid://b7wrhg522blx" path="res://win_area.tscn" id="16_xos8u"]
 
 [sub_resource type="Curve2D" id="Curve2D_a1npu"]
@@ -400,6 +401,8 @@ npc_path = NodePath("../NPC_path")
 [node name="transition_screen" parent="." unique_id=1655704161 instance=ExtResource("15_einqo")]
 
 [node name="Pad3Vol900" type="AudioStreamPlayer" parent="." unique_id=2080511664]
+stream = ExtResource("15_l4o8x")
+volume_db = -15.0
 autoplay = true
 
 [editable path="Rio"]
