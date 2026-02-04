@@ -385,7 +385,7 @@ position = Vector2(-7004, -2321)
 [node name="NPC_path" parent="." unique_id=881674550 instance=ExtResource("2_243n1")]
 position = Vector2(459, 348)
 curve = SubResource("Curve2D_a1npu")
-stop_points = Array[float]([400.0, 1200.0, 2200.0, 4400.0, 11215.0])
+stop_points = Array[float]([400.0, 1200.0, 2200.0, 4400.0, 11215.0, 999999.0])
 speed = 50
 
 [node name="Nube" parent="." unique_id=774090252 instance=ExtResource("3_7k2f8")]
